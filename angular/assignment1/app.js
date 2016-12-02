@@ -12,7 +12,7 @@ angular.module('LunchCheck', [])
     $scope.error = "";
     $scope.color = "";
     $scope.ValidLunch = function(){
-      if ($scope.UserLunch.match(/(,\s{1,},|,,)/g)){
+      if ($scope.UserLunch.match(/(^,|,\s*,|,,|,$)/g)){
         $scope.error = "Data can not be empty";
       }else{
         $scope.error = "";
