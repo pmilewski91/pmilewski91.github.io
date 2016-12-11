@@ -17,7 +17,7 @@ function buyList(shoppingListService){
 };
 
 //controller2
-buyList.$inject = ['shoppingListService'];
+boughtList.$inject = ['shoppingListService'];
 function boughtList(shoppingListService){
   var bought = this;
   bought.items = shoppingListService.showBoughtItems();
