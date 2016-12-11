@@ -25,7 +25,13 @@ function boughtList(shoppingListService){
 //service
 function shoppingListService(){
   var service = this;
-  var buyItems = ['10 cookies', '2 bottles of milk', '3 apples', '1 banana', '6 eggs'];
+  var buyItems = [
+    {name: 'cookies', quantity: 10,},
+    {name: 'bottles of milk', quantity: 2},
+    {name: 'apples', quantity: 3},
+    {name: 'banana', quantity: 1},
+    {name: 'eggs', quantity: 6}
+  ];
   var boughtItems = [];
 
   service.showBuyItems = function(){
