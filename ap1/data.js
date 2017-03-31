@@ -3,7 +3,7 @@ var data = [
 		"id": 0,
 		"title": "Ciasto 1",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/cake",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"jajka": 2,
 			"mąka": "200g"
@@ -16,7 +16,7 @@ var data = [
 		"id": 1,
 		"title": "Obiad 1",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/lunch",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"mięso": "schab",
 			"ziemniaki": "20g"
@@ -28,7 +28,7 @@ var data = [
 		"id": 2,
 		"title": "Obiad 2",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/lunch",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"mięso": "schab",
 			"ziemniaki": "20g"
@@ -40,7 +40,7 @@ var data = [
 		"id": 3,
 		"title": "Ciasto 2",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/cake",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"jajka": 4,
 			"mąka": "300g"
@@ -52,7 +52,7 @@ var data = [
 		"id": 4,
 		"title": "Ciasto 3",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/cake",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"jajka": 4,
 			"mąka": "300g"
@@ -64,7 +64,7 @@ var data = [
 		"id": 5,
 		"title": "Przekąska 1",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/snack",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"jabłko": '1szt',
 			"gruszka": '1szt'
@@ -76,7 +76,7 @@ var data = [
 		"id": 6,
 		"title": "Śniadanie 1",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/breakfast",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"jabłko": '1szt',
 			"gruszka": '1szt'
@@ -87,7 +87,7 @@ var data = [
 		"id": 7,
 		"title": "Przetwory 1",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/preserve",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"jabłko": '1szt',
 			"gruszka": '1szt'
@@ -98,7 +98,7 @@ var data = [
 		"id": 8,
 		"title": "Inne 1",
 		"description": "Opis przyrządzania",
-		"image": "http://loremflickr.com/350/150/food",
+		"image": "http://placehold.it/350x150",
 		"components": {
 			"jabłko": '1szt',
 			"gruszka": '1szt'
