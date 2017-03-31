@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Memory</title>
+		<meta name="author" content="Paweł Milewski">
+    <style>
+    .memory, .find{
+      border:2px solid #000000;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      background-color: #fff700;
+    }
+    .find{
+      background-color: #98ff7e;
+      color:red;
+    }
+    .inMemory{
+        display: table;
+        height: 100%;
+        width: 100%;
+
+    }
+    .inMemoryContent{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 27px;
+        font-weight: bold;
+        font-style: italic;
+        text-shadow: 1px 1px 1px #000000;
+    }
+    </style>
+	</head>
+	<body>
+    <p id="moves"></p>
+    <div id="game"></div>
+    <button>Zacznij grę</button>
+
+    <script>
+          //
+        var movesCounter = document.querySelector('#moves'),
+        game = document.querySelector('#game'),
+        howMany; // Wprowadzenie liczby kart przez użytkownika
+        var cardsType = [], // Tablica trzymająca wartości kart
+        showCards = [], // tablica trzymająca wartości kart wybranych przez użytkownika
+        drawCards = [], // tablica pomieszanych randomowo wartości z tablicy cardsType
+        moves = {
+          'reset': 0, // ruchy liczone do wyresetowania widoczności wartości kart
+          'game': 0 // liczenie ruchów gracza w całej grze
+        },
+       startLengthCarts, // początkowa iloś wartości kart
+       win = false; // czy użytkownik wygrał grę
+
+      //Tworzenie wartości kart (ilość podana przez użytkownika) i umieszczenie do tablicy cardsType
+        function makeCardsType(){
+
+          for(var z = 1; z <= howMany; z++){
+            for(var a = 1; a <=2; a++){
+              cardsType.push(z);
+            }
+          }
+        }
+      // Mieszanie randomowo wartości kart i umieszczenie do tablicy drawCards
+      function randomCards(){
+          //do zmiennej startLengthCarts wsadzamy ilość wszystkich kart
+           startLengthCarts = cardsType.length;
+          //do tablicy drawCards wrzucamy pomieszane losowo karty
+          for(var i = 0; i < startLengthCarts; i++){
+            var randomMemory = Math.floor(Math.random() * cardsType.length);
+            drawCards.push(cardsType[randomMemory]);
+            cardsType.splice(randomMemory,1);
+          }
+         }
+      // Tworzenie kart i umieszczenie ich do div'a o id "game"
+        function createCards(){
+          movesCounter.innerHTML = 'Ruch: '+moves['game'];
+          for(var x = 0; x < cardsType.length; x++){
+            var memoryDiv= document.createElement("DIV");
+            var memoryDivTwo= document.createElement("DIV");
+            var memoryDivThree= document.createElement("DIV");
+            var memoryContent = document.createTextNode("memory");
+            memoryDiv.appendChild(memoryDivTwo);
+            memoryDivTwo.appendChild(memoryDivThree);
+            memoryDivThree.appendChild(memoryContent);
+            memoryDiv.className="memory";
+            memoryDivTwo.className = "inMemory";
+            memoryDivThree.className = "inMemoryContent";
+
+            game.appendChild(memoryDiv);
+
+          }
+
+        }
+      // Funkcja, która się wykonuje przy kliknięciu karty
+      function clickCard(){
+        //wsadzamy do zmiennej memory wsystkie elementy z klasą "memory"
+         var memory = document.querySelectorAll('.memory');
+        //zbieranie informacji, który element został kliknięty. Memory - tablica z elementami z klasą "memory", k - indeks tablicy memory
+          for(var k in memory){
+            (function(k){
+            memory[k].addEventListener("click", function(){
+            // Ukrywanie kart gdy użytkownik odsłonił 2 karty i chce odsłonić trzecią
+              if(moves['reset']===2){
+                for(var i = 0; i< memory.length; i++){
+                  if(memory[i].className !== "find"){
+                    memory[i].innerHTML="<div class='inMemory'><div class='inMemoryContent'>memory</div></div>";
+                  }
+                  //zresetowanie licznika do zasłonięcia kart
+                  moves['reset']=0;
+                  //wyczyszczenie tablicy z wybranymi przez użytkownika kartami
+                  showCards=[];
+                }
+              }
+              //jeśli chcemy odsłonić kartę inną niż już odsłoniętą (z klasą "find") wykonaj
+              if(showCards[0] !== k && memory[k].className !== "find"){
+                // "Odsłonięcie karty" wpisanie do karty jej wartości za tablicy drawCards
+                memory[k].innerHTML=`<div class='inMemory'><div class='inMemoryContent'>${drawCards[k]}</div></div>`;
+                showCards.push(k);
+                moves['reset'] += 1;
+                moves['game'] += 1;
+                movesCounter.innerHTML = 'Ruch: '+moves['game'];
+                // sprawdzanie czy zostały odkryte karty z taką samą wartością
+                if(memory[showCards[0]] && memory[showCards[1]]){
+                   if(memory[showCards[0]].innerHTML == memory[showCards[1]].innerHTML){
+                   alert('Dobrze!');
+                     memory[showCards[0]].className = "find";
+                     memory[showCards[1]].className = "find";
+                   }
+                  }
+              }
+              //Sprawdzenie czy użytkownik odkrył wszystkie karty
+              if(document.querySelectorAll('.find').length === startLengthCarts && win === false){
+              alert("Zwycięstwo!");
+                win = true;
+            }
+            });
+            }(k));
+          }
+
+      }
+      // Reset gry
+      function resetGame(){
+          game.innerHTML="";
+          cardsType=[];
+          showCards = [];
+          drawCards = [];
+          moves = {
+          'reset': 0,
+          'game': 0
+        };
+          win = false;
+      }
+      // Twozenie i zaczynanie gry
+        function startGame(){
+
+        howMany = prompt("proszę podać ile chcesz par kart"); // podanie ilości kart przez użytkownika
+          if(howMany !=="" && !isNaN(howMany) && howMany !== null){ // jeśli podana informacja przez użytkownika to liczba, zacznij grę
+          resetGame();
+          makeCardsType();
+          createCards();
+          randomCards();
+          if(win === false ){
+            clickCard();
+          }
+         }else{
+           alert('podaj liczbę');
+         }
+        }
+      // Uruchomienie nowej gry
+      document.querySelector('button').addEventListener("click", function(){
+      startGame();
+      });
+    </script>
+	</body>
+</html>
