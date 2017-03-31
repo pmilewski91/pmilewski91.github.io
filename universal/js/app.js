@@ -11,7 +11,7 @@ angular.module('app', [])
     var zalogowany = false;
     $scope.login = function(){
       if(zalogowany === false){
-        $('#login').animate({top:'300px'});
+        $('#login').animate({top:'10%'});
         $('#login').css({display:'block'});
       }
 
@@ -26,7 +26,7 @@ angular.module('app', [])
       filter.test($scope.logName) &&
        $scope.logPassword !== "" && $scope.logPassword !== undefined){
         alert('Zalogowałeś się');
-        $('.menu ul li:last-child div span').html($scope.logName);
+        $('.menu ul li:last-child div span').html('Zalogowany');
         $('#login').css({display:'none', top:'-1000px'});
         zalogowany = true;
       }else{
