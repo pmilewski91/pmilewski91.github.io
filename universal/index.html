@@ -1,0 +1,205 @@
+<!doctype html>
+
+<html lang="pl" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBCUniversal</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/rwd.css">
+  <script src="js/3.1.1_jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/angular.min.js"/></script>
+  <script src="js/app.js"/></script>
+  <body ng-controller="aplication">
+    <div id="login">
+      <div class="log_containter">
+        <span class="close" ng-click="loginExit();">X</span>
+      <p>NBCUPORTAL</p>
+      <h3>Logowanie</h3>
+      <input ng-model="logName" type="text" placeholder="ADRES E-MAIL"/><br/>
+
+    </br/>
+      <input ng-model="logPassword" type="text" placeholder="HASŁO"/>
+      <button ng-click="validation();">Zaloguj</button><span class="forget">Nie pamietam hasła <br/><a href="">Pomoz mi</a></span>
+      </div>
+
+      <a class="register" href=""><span>Nie masz jeszcze konta?</span><br/>Zaloguj sie</a>
+    </div>
+    <nav class="menu">
+      <a class="rwd-logo" href="#"><img src="img/logo.jpg" alt="logo" /></a>
+      <div class="mob-nav"></div>
+      <ul class="container">
+        <li><a href="#"><img src="img/logo.jpg" alt="logo" /></a></li>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">Aktualnosci</a></li>
+        <li><a href="#">Kanały</a></li>
+        <li><a href="#">Filmy i seriale</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#" ng-click="login();">
+          <div>
+            <img src="img/user.jpg" alt="user" />
+          </div>
+          <div>
+            Moje konto<br/>
+            <span>Zaloguj mnie</span>
+          </br/>
+          </div>
+        </a></li>
+      </ul>
+    </nav>
+    <section class="parallax">
+        <div class="parallax-height"></div>
+        <div style="height:3px; background-color:#390091; width:50%;"></div>
+      <nav class="submenu">
+        <ul class="container">
+          <li><a ng-click="i_o();">Informacje ogólne<span></span></a></li>
+          <li><a ng-click="ramowka();"  class="sub-active">Ramówka<span></span></a></li>
+        </ul>
+      </nav>
+      <article>
+        <div class="container">
+          <div class="ramowka">
+            <div class="tc"><img src="img/uc.png" alt=""/></div>
+            <div class="tc">
+              <p class="mark1">Universal channel</p>
+              <h1>Universal channel</h1>
+              <hr/>
+              <p class="mark2">Lorem ipsum<span> Dolor sit</span></p>
+              <p class="mainText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <a href="" class="read-more"><span></span>Czytaj dalej</a>
+            </div>
+          </div>
+          <div class="i-o">
+            <div class="tc">
+              <p class="mainText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <a href="" class="read-more"><span></span>Czytaj dalej</a>
+            </div>
+            <div class="tc"><img src="img/uc.png" alt=""/></div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="months">
+      <div class="container">
+        <ul>
+          <li class="active">Styczen</li>
+          <li>Luty</li>
+          <li>Marzec</li>
+          <li>Kwiecien</li>
+          <li>Maj</li>
+          <li>Czerwiec</li>
+          <li>Lipiec</li>
+          <li>Sierpien</li>
+          <li>Wrzesien</li>
+          <li>Październik</li>
+          <li>Listopad</li>
+          <li>Grudzien</li>
+        </ul>
+        <div class="container seasons">
+          <article>
+            <div class="info">
+              <img src="img/offer1.jpg" alt=""/>
+              <div class="text-box">
+                <h3>Telemundo</h3>
+                <p class="mark2">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <a href="#"><span></span>Pobierz materiały w pliku zip</a>
+            </div>
+          </article>
+          <article>
+            <div class="info">
+              <img src="img/offer2.jpg" alt=""/>
+              <div class="text-box">
+                <h3>Telemundo</h3>
+                <p class="mark2">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <a href="#"><span></span>Pobierz materiały w pliku zip</a>
+            </div>
+          </article>
+          <article>
+            <div class="info">
+              <img src="img/offer3.jpg" alt=""/>
+              <div class="text-box">
+                <h3>Telemundo</h3>
+                <p class="mark2">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <a href="#"><span></span>Pobierz materiały w pliku zip</a>
+            </div>
+          </article>
+          <article>
+            <div class="info">
+              <img src="img/offer4.jpg" alt=""/>
+              <div class="text-box">
+                <h3>Telemundo</h3>
+                <p class="mark2">Lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <a href="#"><span></span>Pobierz materiały w pliku zip</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <div class="container">
+        <h2>Osoby do kontaktu</h2>
+        <div class="person">
+          <div>
+            <img src="img/person.jpg" alt=""/>
+          </div>
+          <div>
+            <p>Jan Kowalski</p>
+            <p>Kontakt <span>| Doradca ds. sprzedazy</span></p>
+          </div>
+        </div>
+        <div class="person">
+          <div>
+              <img src="img/person.jpg" alt=""/>
+          </div>
+          <div>
+            <p>Jan Kowalski</p>
+            <p>Kontakt <span>| Doradca ds. sprzedazy</span></p>
+          </div>
+        </div>
+        <div class="person">
+          <div>
+              <img src="img/person.jpg" alt=""/>
+          </div>
+          <div>
+            <p>Jan Kowalski</p>
+            <p>Kontakt <span>| Doradca ds. sprzedazy</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <img class="logo-black" src="img/logo-black.png" alt=""/>
+        <div>
+          <p class="active">Home</p>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+        </div>
+        <div>
+          <p>Aktualnosci</p>
+          <span>sed do eiusmod tempor incididunt ut</span>
+        </div>
+        <div>
+          <p>Kanaly</p>
+          <span>Duis aute irure dolor in reprehenderit in voluptate</span>
+        </div>
+        <div>
+          <p>Kontakt</p>
+          <img src="img/facebook.png" alt="facebook"/><a href="https://www.facebook.com/" target="_blank">facebook</a><br/>
+          <img src="img/twitter.png" alt="twitter"/><a href="https://twitter.com/" target="_blank">twitter</a>
+        </div>
+      </div>
+      <div class="up">
+
+      </div>
+    </footer>
+  </body>
+</html>
