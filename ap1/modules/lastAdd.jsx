@@ -30,11 +30,15 @@ function howManyF(data){
 const LastAdd = ({...prop}) => {
   let data = prop;
   let lg_nr = lgNr(data.howMany+1);
-
+  let ang = 'ng-click="log()"';
+  let Click = () => {
+    DetailsRenderUpdate(categoryObj);
+  }
+  let categoryObj = data.category[data.category.length-data.id];
   return (
      <div className={"col-lg-"+lg_nr}>
-      <img className="img-responsive center-block" src={data.category[data.category.length-data.id].image} alt=""/>
-      <h4 className="text-center">{data.category[data.category.length-data.id].title}</h4>
+        <a onClick={Click} href="#"><img className="img-responsive center-block lastadd" src={categoryObj.image} alt=""/>
+      <h4 className="text-center">{categoryObj.title}</h4></a>
     </div>
   )
 }
@@ -43,11 +47,14 @@ const LastAdd = ({...prop}) => {
 const LastAllAdd = ({...prop}) => {
   let dataLastAdd = prop;
   let lg_nr = lgNr(data.howMany+1);
-
+  let Click = () => {
+    DetailsRenderUpdate(Obj);
+  }
+  let Obj = data[data.length-dataLastAdd.id];
   return (
      <div className={"col-lg-"+lg_nr}>
-      <img className="img-responsive center-block" src={data[data.length-dataLastAdd.id].image} alt=""/>
-      <h4 className="text-center">{data[data.length-dataLastAdd.id].title}</h4>
+        <a onClick={Click} href="#"><img className="img-responsive center-block lastadd" src={Obj.image} alt=""/>
+      <h4 className="text-center">{Obj.title}</h4></a>
     </div>
   )
 }

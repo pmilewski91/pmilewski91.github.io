@@ -2,7 +2,7 @@ var data = [
 	{
 		"id": 0,
 		"title": "Ciasto 1",
-		"description": "Opis przyrządzania",
+		"description": "<strong>Rewelacyjne</strong> brownie z orzechami włoskimi i pysznym kremem mascarpone z masłem orzechowym! przyrządzania Piekarnik nagrzać do 160 stopni C. Dno tortownicy o średnicy 25 - 26 cm wyłożyć papierem do pieczenia, zapiąć obręcz wypuszczając papier na zewnątrz. Masło włożyć do rondelka, dodać kawę, wanilię i kakao. Roztopić na minimalnym ogniu co chwilę mieszając. Odstawić z ognia, dodać połamaną na kosteczki czekoladę, mieszać do roztopienia na gładką masę. W oddzielnej misce wymieszać jajka z cukrem. Dodać do nich roztopioną masę czekoladową i wymieszać. Dodać mąkę oraz połamane orzechy i znów wymieszać na jednolite ciasto. Wyłożyć do przygotowanej blaszki i wstawić do piekarnika. Piec przez 30 minut. Wyjąć z piekarnika i odstawić do ostudzenia.",
 		"image": "http://placehold.it/350x150",
 		"components": {
 			"jajka": 2,

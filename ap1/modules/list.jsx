@@ -1,21 +1,42 @@
+
+
+const short = (Obj) => {
+  let shortened = "";
+  for(let i of Obj.description){
+    if(shortened.length <= 50){
+      shortened +=  i;
+    }
+  }
+  if(Obj.description.length > shortened.length){
+    shortened += "...";
+  }
+  return shortened;
+}
 const Subcategory= ({...prop}) => {
   let data = prop;
   let Click=()=>{
     ListSubcategoriesRenderUpdate(data.subcategory);
+    $('#lastAddShow').hide();
   }
   return (
     <a style={{marginRight: 10 + 'px'}} onClick={Click} className="btn btn-default" href="#" role="button">{data.subcategory}</a>
   )
 }
+function createMarkup(txt) {
+  return {__html: txt};
+};
 
 /*Search List*/
 
 const ListSearch = ({...prop}) => {
   let data = prop;
+  let Click = () => {
+    DetailsRenderUpdate(searchObj);
+  }
   let componentsArr = [];
-  let search = data.search[data.search.length-data.id];
   let searchObj = data.search[data.search.length-data.id];
   let id = 0;
+  let shortened = short(searchObj);
   if(searchObj.subcategory!=undefined){
     for(let subcategory of searchObj.subcategory){
       componentsArr.push(<Subcategory subcategory={subcategory} key={id}/>)
@@ -24,13 +45,17 @@ const ListSearch = ({...prop}) => {
   }
   return (
     <div style={{padding: 10 + 'px'}} className="clearfix">
-      <img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={searchObj.image} alt=""/>
+      <a onClick={Click} href="#"><img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={searchObj.image} alt=""/></a>
       <div className="pull-left">
-        <h4>{searchObj.title}</h4>
-        <p>{searchObj.description}</p>
+        <a onClick={Click} href="#">
+          <h4>{searchObj.title}</h4>
+          <p dangerouslySetInnerHTML={{__html: shortened}}></p>
+        </a>
         {componentsArr}
       </div>
+
     </div>
+
   )
 }
 
@@ -65,10 +90,13 @@ return(
 /*List*/
 const List = ({...prop}) => {
   let data = prop;
+  let Click = () => {
+    DetailsRenderUpdate(categoryObj);
+  }
   let componentsArr = [];
-  let categoryArr = data.categoryArr[data.categoryArr.length-data.id];
   let categoryObj = data.categoryArr[data.categoryArr.length-data.id];
   let id = 0;
+  let shortened = short(categoryObj);
   if(categoryObj.subcategory!=undefined){
     for(let subcategory of categoryObj.subcategory){
       componentsArr.push(<Subcategory subcategory={subcategory} key={id}/>)
@@ -77,10 +105,12 @@ const List = ({...prop}) => {
   }
   return (
     <div style={{padding: 10 + 'px'}} className="clearfix">
-      <img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={categoryObj.image} alt=""/>
+        <a onClick={Click} href="#"><img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={categoryObj.image} alt=""/></a>
       <div className="pull-left">
-        <h4>{categoryObj.title}</h4>
-        <p>{categoryObj.description}</p>
+        <a onClick={Click} href="#">
+          <h4>{categoryObj.title}</h4>
+        <p dangerouslySetInnerHTML={{__html: shortened}}></p>
+        </a>
         {componentsArr}
       </div>
     </div>

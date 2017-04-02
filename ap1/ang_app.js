@@ -2,15 +2,14 @@ var app = angular.module('myApp', []);
 app.controller('myLib', function($scope) {
 
 $scope.homeShow = true;
-
+function log(){
+  $scope.homeShow = false;
+}
 $scope.searchF = function() {
   ListSearchRenderUpdate($('#search').val());
   $scope.homeShow = false;
-  $scope.lunchShow = false;
-  $scope.dessertShow = false;
-  $scope.breakfastShow = false;
-  $scope.snackShow = false;
   if($('#search').val()==""){
+    $('#lastAddShow').show();
     $scope.homeShow = true;
     $('.navbar-nav li').removeClass('active');
     $('#home').parent().addClass('active');
@@ -24,6 +23,7 @@ $scope.searchF = function() {
     switch ($(e.target).data('menu')) {
       case "home":
       ListAllRenderUpdate();
+        $('#lastAddShow').show();
         $scope.homeShow = true;
         break;
       case "lunch":
