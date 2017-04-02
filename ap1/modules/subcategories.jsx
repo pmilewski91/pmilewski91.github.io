@@ -1,3 +1,14 @@
+const Subcategory= ({...prop}) => {
+  let data = prop;
+  let Click=()=>{
+    ListSubcategoriesRenderUpdate(data.subcategory);
+    $('#lastAddShow').hide();
+  }
+  return (
+    <a style={{marginRight: 10 + 'px'}} onClick={Click} className="btn btn-default" href="#" role="button">{data.subcategory}</a>
+  )
+}
+
 const Subcategories = ({...prop}) => {
   let data = prop;
   let Click=()=>{

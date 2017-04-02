@@ -3,7 +3,7 @@
 const short = (Obj) => {
   let shortened = "";
   for(let i of Obj.description){
-    if(shortened.length <= 50){
+    if(shortened.length <= 80){
       shortened +=  i;
     }
   }
@@ -12,19 +12,7 @@ const short = (Obj) => {
   }
   return shortened;
 }
-const Subcategory= ({...prop}) => {
-  let data = prop;
-  let Click=()=>{
-    ListSubcategoriesRenderUpdate(data.subcategory);
-    $('#lastAddShow').hide();
-  }
-  return (
-    <a style={{marginRight: 10 + 'px'}} onClick={Click} className="btn btn-default" href="#" role="button">{data.subcategory}</a>
-  )
-}
-function createMarkup(txt) {
-  return {__html: txt};
-};
+
 
 /*Search List*/
 

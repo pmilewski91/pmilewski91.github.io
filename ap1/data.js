@@ -9,8 +9,8 @@ var data = [
 			"mąka": "200g"
 		},
 		"category": "dessert",
-		"subcategory" : ["Ciasta"]
-
+		"subcategory" : ["Ciasta"],
+		"video" : "https://www.youtube.com/watch?v=1mzXtPsh7l4"
 	},
 	{
 		"id": 1,
