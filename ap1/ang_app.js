@@ -55,9 +55,12 @@ $scope.searchF = function() {
         $scope.homeShow = true;
     }
   };
+  $scope.addRecipe = function(){
+    RecipeRenderUpdate();
+  }
 });
 app.directive('navigation', function(){
   return {
-    templateUrl: 'modules/nav.html?v=1.0.6'
+    templateUrl: 'modules/nav.html?v=1.0.8'
   }
 });

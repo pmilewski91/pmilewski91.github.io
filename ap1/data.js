@@ -10,7 +10,7 @@ var data = [
 		},
 		"category": "dessert",
 		"subcategory" : ["Ciasta"],
-		"video" : "https://www.youtube.com/watch?v=1mzXtPsh7l4"
+		"link" : "https://www.youtube.com/watch?v=1mzXtPsh7l4"
 	},
 	{
 		"id": 1,
