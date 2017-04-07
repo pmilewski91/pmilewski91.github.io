@@ -8,6 +8,11 @@ const DetailsRender = ({...prop}) => {
    let Link = () =>{
      window.open(data.categoryObj.link);
    }
+   let EditRecipe = () => {
+     ReactDOM.render(
+     <div></div>, document.querySelector('#addRecipe'));
+     RecipeRenderUpdate(data);
+   }
    let componentsArr = [];
    let id = 0;
    if(data.categoryObj.subcategory!=undefined){
@@ -21,7 +26,8 @@ const DetailsRender = ({...prop}) => {
        <h3>Szczegóły:</h3>
        <img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={data.categoryObj.image} alt=""/>
        <button onClick={CloseDetails} type="button" className="btn btn-danger">Zamknij</button>
-       {data.categoryObj.link!=undefined?<button onClick={Link} style={{display: 'block', margin: 5 + 'px '+ 0}} type="button" className="btn btn-primary">Link</button>:null}
+       <button onClick={EditRecipe} type="button" className="btn btn-primary">Edytuj</button>
+       {data.categoryObj.link!=""?<button onClick={Link} style={{display: 'block', margin: 5 + 'px '+ 0}} type="button" className="btn btn-default">Link</button>:null}
        <div className="clearfix"></div>
        <div>
          <h2>{data.categoryObj.title}</h2>

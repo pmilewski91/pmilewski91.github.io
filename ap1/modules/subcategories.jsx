@@ -20,8 +20,8 @@ const Subcategories = ({...prop}) => {
 }
 const SubcategoriesRender = ({...prop}) => {
   let data = prop;
-  let subcategoriesLunch = ['Mięsa','Ryby','Owoce Morza','Zupy','Pierogi/Kluski','Inne Obiady'];
-  let subcategoriesDessert = ['Lody','Ciasta','Ciasteczka','Inne Desery'];
+  let subcategoriesLunch = ['Mięsa','Ryby','Owoce_Morza','Zupy','Pierogi-Kluski','Inne_Obiady'];
+  let subcategoriesDessert = ['Lody','Ciasta','Ciasteczka','Inne_Desery'];
   let subcategoriesSnack = ['Sałatki'];
   let subcategoriesArr = [];
   let id = 0;
