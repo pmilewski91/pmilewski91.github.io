@@ -5,7 +5,7 @@ const Subcategory= ({...prop}) => {
     $('#lastAddShow').hide();
   }
   return (
-    <a style={{marginRight: 10 + 'px'}} onClick={Click} className="btn btn-default" href="#" role="button">{data.subcategory}</a>
+    <a style={{marginRight: 10 + 'px'}} onClick={Click} className="btn btn-default" href="#" role="button">{data.subcategory.replace(/_/g," ")}</a>
   )
 }
 
@@ -15,7 +15,7 @@ const Subcategories = ({...prop}) => {
     ListSubcategoriesRenderUpdate(data.subcategory);
   }
   return (
-    <a style={{marginRight: 10 + 'px'}} onClick={Click} className="btn btn-default" href="#" role="button">{data.subcategory}</a>
+    <a style={{marginRight: 10 + 'px'}} onClick={Click} className="btn btn-default" href="#" role="button">{data.subcategory.replace(/_/g," ")}</a>
   )
 }
 const SubcategoriesRender = ({...prop}) => {

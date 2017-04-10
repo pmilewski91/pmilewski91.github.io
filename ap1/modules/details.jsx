@@ -13,6 +13,14 @@ const DetailsRender = ({...prop}) => {
      <div></div>, document.querySelector('#addRecipe'));
      RecipeRenderUpdate(data);
    }
+   let DeleteRecipe = () => {
+     var confirmDeleted = confirm("Na pewno usunąć ten przepis?");
+     if(confirmDeleted){
+       data.recipeData.splice(data.recipeData.indexOf(data.categoryObj), 1);
+       upComponents();
+       CloseDetails();
+     }
+   }
    let componentsArr = [];
    let id = 0;
    if(data.categoryObj.subcategory!=undefined){
@@ -27,6 +35,7 @@ const DetailsRender = ({...prop}) => {
        <img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={data.categoryObj.image} alt=""/>
        <button onClick={CloseDetails} type="button" className="btn btn-danger">Zamknij</button>
        <button onClick={EditRecipe} type="button" className="btn btn-primary">Edytuj</button>
+       <button onClick={DeleteRecipe} type="button" className="btn btn-danger">Usuń</button>
        {data.categoryObj.link!=""?<button onClick={Link} style={{display: 'block', margin: 5 + 'px '+ 0}} type="button" className="btn btn-default">Link</button>:null}
        <div className="clearfix"></div>
        <div>
@@ -43,5 +52,5 @@ const DetailsRender = ({...prop}) => {
 
 function DetailsRenderUpdate(categoryObj){
   ReactDOM.render(
-    <DetailsRender categoryObj={categoryObj} />, document.querySelector('#details'));
+    <DetailsRender recipeData={data} categoryObj={categoryObj} />, document.querySelector('#details'));
 }

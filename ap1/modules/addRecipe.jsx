@@ -21,9 +21,10 @@ const Checkbox = ({...prop}) => {
       checkboxName = 'Inne';
       break;
   }
+  let repType = data.type.replace(/_/g," ");
   return (
     <label>
-      <input name={data.what=="category"?"category":null} id={data.type} type={data.what=="category"?"radio":"checkbox"}/> {data.what=="category"?checkboxName:data.type+" "}
+      <input name={data.what=="category"?"category":null} id={data.type} type={data.what=="category"?"radio":"checkbox"}/> {data.what=="category"?checkboxName:repType+" "}
     </label>
   )
 }
@@ -46,16 +47,7 @@ const RecipeRender = ({...prop}) => {
     checkboxSubcategoryArr.push(<Checkbox what={category} type={checkboxSub} key={subcategoryId}/>)
     subcategoryId++;
   }
-  function upComponents(){
-    LastAllAddRenderUpdate();
-    LastAddLunchRenderUpdate();
-    LastAddDessertRenderUpdate();
-    LastAddBreakfastRenderUpdate();
-    LastAddSnackRenderUpdate();
-    LastAddPreserveRenderUpdate();
-    LastAddOtherRenderUpdate();
-    document.querySelector('#home').click();
-  }
+  
   let addRecipeF = () => {
     function recipe(){
       if(data.length !== 0){
