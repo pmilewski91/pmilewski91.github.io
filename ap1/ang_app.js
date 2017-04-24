@@ -55,12 +55,60 @@ $scope.searchF = function() {
         $scope.homeShow = true;
     }
   };
+
+  $scope.loginFun = function(){
+    let loginApp = document.querySelector('#loginApp').value;
+    let passApp = document.querySelector('#passApp').value;
+    checkUser(loginApp, passApp);
+  }
+  $scope.registrationFun = function(){
+    let loginApp = document.querySelector('#loginApp').value;
+    let passApp = document.querySelector('#passApp').value;
+    if(loginApp.length >= 3 && passApp.length >= 3){
+      $.ajax({
+        url: 'https://api.mlab.com/api/1/databases/przepisy/collections/users?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw',
+        success: function(result){
+          let exist = true;
+          for(let dbUser of result){
+            if(loginApp !== dbUser.name){
+
+                exist = false;
+
+            }else{
+                exist = true;
+                alert("Taki użytkownik już istnieje");
+                return;
+            }
+          }
+          if (!exist){
+            $.ajax( {
+              url: `https://api.mlab.com/api/1/databases/przepisy/collections/users?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw`,
+            data: JSON.stringify([ {"name":loginApp, "pass": passApp} ]),
+            type: "POST",
+            contentType: "application/json",
+            success: function(){
+              alert("Utworzono konto");
+              checkUser(loginApp, passApp);
+            },
+            error: function(){
+              alert("Wystąpił błąd");
+            }});
+          }
+         },
+        error: function(){
+          alert('Bład połączenia z bazą danych!');
+        }});
+    }else{
+      alert("Login i hasło muszą mieć minimum 3 znaki");
+    }
+
+  }
   $scope.addRecipe = function(){
     RecipeRenderUpdate();
   }
 });
 app.directive('navigation', function(){
   return {
-    templateUrl: 'modules/nav.html?v=1.0.8'
+    templateUrl: 'modules/nav.html?v=1.0.9'
   }
 });

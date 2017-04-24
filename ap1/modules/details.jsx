@@ -16,9 +16,22 @@ const DetailsRender = ({...prop}) => {
    let DeleteRecipe = () => {
      var confirmDeleted = confirm("Na pewno usunąć ten przepis?");
      if(confirmDeleted){
-       data.recipeData.splice(data.recipeData.indexOf(data.categoryObj), 1);
-       upComponents();
-       CloseDetails();
+       $.ajax( {
+        url: `https://api.mlab.com/api/1/databases/przepisy/collections/przepisy_${user.id}/${data.categoryObj._id.$oid}?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw`,
+        type: "DELETE",
+   		  async: true,
+   		  timeout: 300000,
+   		  success: function () {
+          data.recipeData.splice(data.recipeData.indexOf(data.categoryObj), 1);
+          upComponents();
+          document.querySelector('#home').click();
+          CloseDetails();
+        },
+   		  error: function (xhr, status, err) {
+          alert(xhr+" "+status+" "+err);
+        }});
+
+
      }
    }
    let componentsArr = [];
@@ -32,7 +45,7 @@ const DetailsRender = ({...prop}) => {
    return (
      <div style={{padding: 10 + 'px'}} className="clearfix">
        <h3>Szczegóły:</h3>
-       <img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={data.categoryObj.image} alt=""/>
+       <img style={{paddingRight: 10 + 'px', maxWidth: 50 + '%'}} className="img-responsive pull-left" src={data.categoryObj.image} alt=""/>
        <button onClick={CloseDetails} type="button" className="btn btn-danger">Zamknij</button>
        <button onClick={EditRecipe} type="button" className="btn btn-primary">Edytuj</button>
        <button onClick={DeleteRecipe} type="button" className="btn btn-danger">Usuń</button>

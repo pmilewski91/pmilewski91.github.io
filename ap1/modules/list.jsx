@@ -33,7 +33,7 @@ const ListSearch = ({...prop}) => {
   }
   return (
     <div style={{padding: 10 + 'px'}} className="clearfix">
-      <a onClick={Click} href="#"><img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={searchObj.image} alt=""/></a>
+      <a onClick={Click} href="#"><img style={{paddingRight: 10 + 'px', maxWidth: 350 + 'px'}} className="img-responsive pull-left" src={searchObj.image} alt=""/></a>
       <div className="pull-left">
         <a onClick={Click} href="#">
           <h4>{searchObj.title}</h4>
@@ -93,7 +93,7 @@ const List = ({...prop}) => {
   }
   return (
     <div style={{padding: 10 + 'px'}} className="clearfix">
-        <a onClick={Click} href="#"><img style={{paddingRight: 10 + 'px'}} className="img-responsive pull-left" src={categoryObj.image} alt=""/></a>
+        <a onClick={Click} href="#"><img style={{paddingRight: 10 + 'px', maxWidth: 350 + 'px'}} className="img-responsive pull-left" src={categoryObj.image} alt=""/></a>
       <div className="pull-left">
         <a onClick={Click} href="#">
           <h4>{categoryObj.title}</h4>

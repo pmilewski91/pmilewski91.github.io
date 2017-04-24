@@ -47,17 +47,12 @@ const RecipeRender = ({...prop}) => {
     checkboxSubcategoryArr.push(<Checkbox what={category} type={checkboxSub} key={subcategoryId}/>)
     subcategoryId++;
   }
-  
+
   let addRecipeF = () => {
     function recipe(){
-      if(data.length !== 0){
-        this.id = data[data.length-1].id+1;
-      }else{
-        this.id = 0;
-      }
       this.title = document.querySelector("#nameInput").value;
       this.description = CKEDITOR.instances.editor1.getData();
-      this.image = "http://placehold.it/350x150";
+      this.image = document.querySelector("#imageInput").value !== ""? document.querySelector("#imageInput").value:"http://placehold.it/350x150";
       this.category = document.querySelector("input[name='category']:checked").id;
       let subcategoryAll = document.querySelectorAll("input[type='checkbox']:checked");
       if(subcategoryAll.length !== 0){
@@ -73,11 +68,24 @@ const RecipeRender = ({...prop}) => {
     }
     if(document.querySelector("#nameInput").value !== "" && document.querySelector("input[name='category']:checked") !== null && CKEDITOR.instances.editor1.getData() !== ""){
       let newRecipe = new recipe();
-      data.push(newRecipe);
-      upComponents();
-      alert('Dodano przepis');
-      ReactDOM.render(
-        <div></div>, document.querySelector('#addRecipe'));
+      $.ajax( {
+        url: `https://api.mlab.com/api/1/databases/przepisy/collections/przepisy_${user.id}?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw`,
+		  data: JSON.stringify( newRecipe ),
+		  type: "POST",
+		  contentType: "application/json",
+      success: function(){
+        data.push(newRecipe);
+        upComponents();
+        document.querySelector('#home').click();
+        alert('Dodano przepis');
+        ReactDOM.render(
+          <div></div>, document.querySelector('#addRecipe'));
+      },
+      error: function(){
+        alert("Wystąpił błąd");
+        getData();
+      }});
+
     }else{
       alert("Wypełnij wymagane pola");
     }
@@ -86,6 +94,7 @@ const RecipeRender = ({...prop}) => {
 
     if(document.querySelector("#nameInput").value !== "" && document.querySelector("input[name='category']:checked") !== null && CKEDITOR.instances.editor1.getData() !== ""){
       change.edit.categoryObj.title = document.querySelector("#nameInput").value;
+      change.edit.categoryObj.image = document.querySelector("#imageInput").value;
       change.edit.categoryObj.description = CKEDITOR.instances.editor1.getData();
       change.edit.categoryObj.category = document.querySelector("input[name='category']:checked").id;
       let subcategoryAll = document.querySelectorAll("input[type='checkbox']:checked");
@@ -97,11 +106,26 @@ const RecipeRender = ({...prop}) => {
       }
       change.edit.categoryObj.link = document.querySelector("#linkInput").value;
 
-      upComponents();
-      DetailsRenderUpdate(change.edit.categoryObj);
-      alert('Zmieniono przepis');
-      ReactDOM.render(
-        <div></div>, document.querySelector('#addRecipe'));
+      $.ajax( {
+        url: `https://api.mlab.com/api/1/databases/przepisy/collections/przepisy_${user.id}/${change.edit.categoryObj._id.$oid}?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw`,
+		  data: JSON.stringify( change.edit.categoryObj ),
+		  type: "PUT",
+		  contentType: "application/json",
+      success: function(){
+        upComponents();
+        DetailsRenderUpdate(change.edit.categoryObj);
+        document.querySelector('#home').click();
+        alert('Zmieniono przepis');
+        ReactDOM.render(
+          <div></div>, document.querySelector('#addRecipe'));
+      },
+    	error: function(){
+        alert("Wystąpił błąd");
+        getData();
+      }} );
+
+
+
     }else{
       alert("Wypełnij wymagane pola");
     }
@@ -117,6 +141,8 @@ const RecipeRender = ({...prop}) => {
         <div className="form-group">
           <h3>Tytuł<span style={{color:"red"}}>*</span></h3>
           <input type="text" className="form-control" id="nameInput" placeholder="Nazwa przepisu"/>
+          <h3>Link do zdjęcia</h3>
+          <input type="text" className="form-control" id="imageInput" placeholder="Link zewnętrzny do zdjęcia przepisu"/>
           <h3>Opis<span style={{color:"red"}}>*</span></h3>
           <textarea name="editor1" id="editor1"></textarea>
 

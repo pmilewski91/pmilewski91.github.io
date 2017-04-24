@@ -1,83 +1,54 @@
-var data = [
-	{
-		"id": 0,
-		"title": "Ciasto 1",
-		"description": "<strong>Rewelacyjne</strong> brownie z orzechami włoskimi i pysznym kremem mascarpone z masłem orzechowym! przyrządzania Piekarnik nagrzać do 160 stopni C. Dno tortownicy o średnicy 25 - 26 cm wyłożyć papierem do pieczenia, zapiąć obręcz wypuszczając papier na zewnątrz. Masło włożyć do rondelka, dodać kawę, wanilię i kakao. Roztopić na minimalnym ogniu co chwilę mieszając. Odstawić z ognia, dodać połamaną na kosteczki czekoladę, mieszać do roztopienia na gładką masę. W oddzielnej misce wymieszać jajka z cukrem. Dodać do nich roztopioną masę czekoladową i wymieszać. Dodać mąkę oraz połamane orzechy i znów wymieszać na jednolite ciasto. Wyłożyć do przygotowanej blaszki i wstawić do piekarnika. Piec przez 30 minut. Wyjąć z piekarnika i odstawić do ostudzenia.",
-		"image": "http://placehold.it/350x150",
-		"category": "dessert",
-		"subcategory" : ["Ciasta", "Lody"],
-		"link" : "https://www.youtube.com/watch?v=1mzXtPsh7l4"
-	},
-	{
-		"id": 1,
-		"title": "Obiad 1",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "lunch",
-		"subcategory" : ["Mięsa"],
-		"link" : ""
-	},
-	{
-		"id": 2,
-		"title": "Obiad 2",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "lunch",
-		"subcategory" : ["Zupy"],
-		"link" : ""
-	},
-	{
-		"id": 3,
-		"title": "Ciasto 2",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "dessert",
-		"subcategory" : ["Ciasta"],
-		"link" : ""
-	},
-	{
-		"id": 4,
-		"title": "Ciasto 3",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "dessert",
-		"subcategory" : ["Ciasta"],
-		"link" : ""
-	},
-	{
-		"id": 5,
-		"title": "Przekąska 1",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "snack",
-		"subcategory" : ["Sałatki"],
-		"link" : ""
-	},
-	{
-		"id": 6,
-		"title": "Śniadanie 1",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "breakfast",
-		"subcategory" : [],
-		"link" : ""
-	},
-	{
-		"id": 7,
-		"title": "Przetwory 1",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "preserve",
-		"subcategory" : [],
-		"link" : ""
-	},
-	{
-		"id": 8,
-		"title": "Inne 1",
-		"description": "Opis przyrządzania",
-		"image": "http://placehold.it/350x150",
-		"category": "other",
-		"subcategory" : [],
-		"link" : ""
+var data = [];
+var user = {
+	"name" : "",
+	"pass" : "",
+	"id" : ""
+}
+
+
+function checkUser(name, pass){
+	 user = {
+		"name" : name,
+		"pass" : pass,
+		"id" : ""
 	}
-]
+	let loggedIn = false;
+	$.ajax({
+		url: 'https://api.mlab.com/api/1/databases/przepisy/collections/users?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw',
+		success: function(result){
+			for(let dbUser of result){
+				if(user.name == dbUser.name && user.pass == dbUser.pass){
+					alert(`Witaj ${user.name}`);
+					user.id = dbUser._id.$oid;
+					getData();
+					loggedIn = true;
+					$('navigation').css({'display': 'block'});
+					$('#loginPanel').css({'display': 'none'});
+					$(' #lastAddShow').css({'display': 'block'});
+					document.querySelector('#welcomeUser').innerHTML="Witaj "+user.name;
+
+				}
+			}
+			if(!loggedIn){
+				alert("Niepoprawne dane do logowania");
+			}
+		 },
+		error: function(){
+			alert('Bład połączenia z bazą danych!');
+		}});
+}
+
+function getData(){
+	$.ajax({
+		url: `https://api.mlab.com/api/1/databases/przepisy/collections/przepisy_${user.id}?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw`,
+		success: function(result){
+			data = [];
+			for(let przepis of result){
+				data.push(przepis);
+			}
+			upComponents();
+		 },
+		error: function(){
+			alert('Bład połączenia z bazą danych!');
+		}});
+};

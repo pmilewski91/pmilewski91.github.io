@@ -6,5 +6,4 @@ function upComponents(){
   LastAddSnackRenderUpdate();
   LastAddPreserveRenderUpdate();
   LastAddOtherRenderUpdate();
-  document.querySelector('#home').click();
 }
