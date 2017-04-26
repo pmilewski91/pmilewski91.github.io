@@ -61,9 +61,8 @@ const RecipeRender = ({...prop}) => {
           this.subcategory.push(sub.id);
         }
       }
-      if(document.querySelector("#linkInput").value !== ""){
         this.link = document.querySelector("#linkInput").value;
-      }
+
 
     }
     if(document.querySelector("#nameInput").value !== "" && document.querySelector("input[name='category']:checked") !== null && CKEDITOR.instances.editor1.getData() !== ""){
@@ -74,8 +73,7 @@ const RecipeRender = ({...prop}) => {
 		  type: "POST",
 		  contentType: "application/json",
       success: function(){
-        data.push(newRecipe);
-        upComponents();
+        getData();
         document.querySelector('#home').click();
         alert('Dodano przepis');
         ReactDOM.render(
@@ -94,7 +92,7 @@ const RecipeRender = ({...prop}) => {
 
     if(document.querySelector("#nameInput").value !== "" && document.querySelector("input[name='category']:checked") !== null && CKEDITOR.instances.editor1.getData() !== ""){
       change.edit.categoryObj.title = document.querySelector("#nameInput").value;
-      change.edit.categoryObj.image = document.querySelector("#imageInput").value;
+      change.edit.categoryObj.image = document.querySelector("#imageInput").value !== ""? document.querySelector("#imageInput").value:"http://placehold.it/350x150";;
       change.edit.categoryObj.description = CKEDITOR.instances.editor1.getData();
       change.edit.categoryObj.category = document.querySelector("input[name='category']:checked").id;
       let subcategoryAll = document.querySelectorAll("input[type='checkbox']:checked");
@@ -163,6 +161,7 @@ const RecipeRender = ({...prop}) => {
 
 function edit(data){
   document.querySelector('#nameInput').value = data.categoryObj.title;
+  document.querySelector('#imageInput').value = data.categoryObj.image;
   CKEDITOR.instances.editor1.setData(data.categoryObj.description);
   document.querySelector('#'+data.categoryObj.category).checked = true;
   if(data.categoryObj.subcategory){
@@ -173,10 +172,7 @@ function edit(data){
       }
     }
   }
-
-  if(data.categoryObj.link){
-    document.querySelector('#linkInput').value = data.categoryObj.link;
-  }
+  document.querySelector('#linkInput').value = data.categoryObj.link;
 }
 
 function RecipeRenderUpdate(data){
@@ -187,4 +183,6 @@ function RecipeRenderUpdate(data){
     if(data){
       edit(data);
     }
+
+    $("html, body").animate({ scrollTop: 0 }, "slow");
 }
