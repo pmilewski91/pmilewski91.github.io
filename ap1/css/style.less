@@ -1,9 +1,79 @@
 // out: styles.css, sourcemap: true, compress: true
-
+@color1: #ffd947;
 body{
   background: url('img/background.jpg') no-repeat center center fixed;
   background-size: cover;
+  font-size:24px;
 }
 .container {background-color: #fff;}
+#loading{
+  @media all and (min-width: 800px){
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media all and (max-width: 799px){
+    width: 100%;
+  }
+    width: 240px;
+    height: 160px;
+    z-index: 100000;
+    display: none;
+    background-image: url(img/loading.gif);
+    position: fixed;
+}
+#loginPanel {
+  @media all and (min-width: 800px){
+    @keyframes loginPanelAnimation {
+        from {top: -1000%;}
+        to {top: 50%;}
+    }
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: #000 0px 0px 20px;
+  }
+  @media all and (max-width: 799px){
+    @keyframes loginPanelAnimation {
+        from {top: -1000%;}
+        to {top: 0%;}
+    }
+    width: 100%;
+  }
+    background-color: #ffffff;
+    position: absolute;
+    animation-name: loginPanelAnimation;
+    animation-duration: 2s;
+
+    h2{
+      padding: 20px;
+      background-color: @color1;
+      margin: 0;
+    }
+    div{
+      display: inline-grid;
+      span{
+        @media all and (min-width: 800px){
+          padding: 0 50px;
+        }
+        input{
+          margin: 10px auto;
+          font-size: 1.5em;
+          width: 90%;
+        }
+      }
+
+      button{
+        background-color: @color1;
+        border: none;
+        padding: 10px 0;
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        &:hover{
+          background-color: #ffe376;
+        }
+      }
+    }
+}
 #subcategories{padding: 0 10px;}
 #details{background-color: #ececec;}

@@ -18,7 +18,7 @@ function checkUser(name, pass){
 		success: function(result){
 			for(let dbUser of result){
 				if(user.name == dbUser.name && user.pass == dbUser.pass){
-					alert(`Witaj ${user.name}`);
+					$('#loading').css({'display':'none'});
 					user.id = dbUser._id.$oid;
 					getData();
 					loggedIn = true;
@@ -31,6 +31,7 @@ function checkUser(name, pass){
 			}
 			if(!loggedIn){
 				alert("Niepoprawne dane do logowania");
+				$('#loading').css({'display':'none'});
 			}
 		 },
 		error: function(){
@@ -39,6 +40,7 @@ function checkUser(name, pass){
 }
 
 function getData(){
+	$('#loading').css({'display':'block'});
 	$.ajax({
 		url: `https://api.mlab.com/api/1/databases/przepisy/collections/przepisy_${user.id}?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw`,
 		success: function(result){
@@ -47,8 +49,10 @@ function getData(){
 				data.push(przepis);
 			}
 			upComponents();
+			$('#loading').css({'display':'none'});
 		 },
 		error: function(){
 			alert('Bład połączenia z bazą danych!');
+			$('#loading').css({'display':'none'});
 		}});
 };

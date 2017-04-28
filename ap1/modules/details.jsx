@@ -15,6 +15,7 @@ const DetailsRender = ({...prop}) => {
    }
    let DeleteRecipe = () => {
      var confirmDeleted = confirm("Na pewno usunąć ten przepis?");
+     $('#loading').css({'display':'block'});
      if(confirmDeleted){
        $.ajax( {
         url: `https://api.mlab.com/api/1/databases/przepisy/collections/przepisy_${user.id}/${data.categoryObj._id.$oid}?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw`,
@@ -26,9 +27,11 @@ const DetailsRender = ({...prop}) => {
           upComponents();
           document.querySelector('#home').click();
           CloseDetails();
+          $('#loading').css({'display':'none'});
         },
    		  error: function (xhr, status, err) {
           alert(xhr+" "+status+" "+err);
+          $('#loading').css({'display':'none'});
         }});
 
 

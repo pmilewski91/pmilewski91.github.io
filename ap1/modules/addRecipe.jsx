@@ -49,6 +49,7 @@ const RecipeRender = ({...prop}) => {
   }
 
   let addRecipeF = () => {
+    $('#loading').css({'display':'block'});
     function recipe(){
       this.title = document.querySelector("#nameInput").value;
       this.description = CKEDITOR.instances.editor1.getData();
@@ -76,20 +77,23 @@ const RecipeRender = ({...prop}) => {
         getData();
         document.querySelector('#home').click();
         alert('Dodano przepis');
+        $('#loading').css({'display':'none'});
         ReactDOM.render(
           <div></div>, document.querySelector('#addRecipe'));
       },
       error: function(){
         alert("Wystąpił błąd");
+        $('#loading').css({'display':'none'});
         getData();
       }});
 
     }else{
       alert("Wypełnij wymagane pola");
+      $('#loading').css({'display':'none'});
     }
   }
   let editRecipeF = () => {
-
+    $('#loading').css({'display':'block'});
     if(document.querySelector("#nameInput").value !== "" && document.querySelector("input[name='category']:checked") !== null && CKEDITOR.instances.editor1.getData() !== ""){
       change.edit.categoryObj.title = document.querySelector("#nameInput").value;
       change.edit.categoryObj.image = document.querySelector("#imageInput").value !== ""? document.querySelector("#imageInput").value:"http://placehold.it/350x150";;
@@ -114,11 +118,13 @@ const RecipeRender = ({...prop}) => {
         DetailsRenderUpdate(change.edit.categoryObj);
         document.querySelector('#home').click();
         alert('Zmieniono przepis');
+        $('#loading').css({'display':'none'});
         ReactDOM.render(
           <div></div>, document.querySelector('#addRecipe'));
       },
     	error: function(){
         alert("Wystąpił błąd");
+        $('#loading').css({'display':'none'});
         getData();
       }} );
 
@@ -126,6 +132,7 @@ const RecipeRender = ({...prop}) => {
 
     }else{
       alert("Wypełnij wymagane pola");
+      $('#loading').css({'display':'none'});
     }
   }
   let CloseNewRecipe = () => {

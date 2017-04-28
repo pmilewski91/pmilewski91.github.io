@@ -57,13 +57,16 @@ $scope.searchF = function() {
   };
 
   $scope.loginFun = function(){
+    $('#loading').css({'display':'block'});
     let loginApp = document.querySelector('#loginApp').value;
     let passApp = document.querySelector('#passApp').value;
     checkUser(loginApp, passApp);
   }
   $scope.registrationFun = function(){
+    $('#loading').css({'display':'block'});
     let loginApp = document.querySelector('#loginApp').value;
     let passApp = document.querySelector('#passApp').value;
+
     if(loginApp.length >= 3 && passApp.length >= 3){
       $.ajax({
         url: 'https://api.mlab.com/api/1/databases/przepisy/collections/users?apiKey=Sj7Ov5G_CDq68W2dPY5mNBIOybU14QLw',
@@ -77,6 +80,7 @@ $scope.searchF = function() {
             }else{
                 exist = true;
                 alert("Taki użytkownik już istnieje");
+                $('#loading').css({'display':'none'});
                 return;
             }
           }
@@ -89,17 +93,21 @@ $scope.searchF = function() {
             success: function(){
               alert("Utworzono konto");
               checkUser(loginApp, passApp);
+              $('#loading').css({'display':'none'});
             },
             error: function(){
               alert("Wystąpił błąd");
+              $('#loading').css({'display':'none'});
             }});
           }
          },
         error: function(){
           alert('Bład połączenia z bazą danych!');
+          $('#loading').css({'display':'none'});
         }});
     }else{
       alert("Login i hasło muszą mieć minimum 3 znaki");
+      $('#loading').css({'display':'none'});
     }
 
   }

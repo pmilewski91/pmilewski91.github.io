@@ -9,7 +9,7 @@
 		<meta name="author" content="Paweł Milewski">
 		<script src="https://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
 		<script src="frameworks/jquery-3.2.1.min.js"></script>
-		<link rel="stylesheet" href="css/styles.css?v=1.0.1">
+		<link rel="stylesheet" href="css/styles.css?v=1.0.2">
 		<link rel="stylesheet" href="frameworks/bootstrap.min.css">
 		<link rel="stylesheet" href="frameworks/bootstrap-theme.min.css">
 		<script src="frameworks/bootstrap.min.js"></script>
@@ -21,79 +21,83 @@
 		navigation, #lastAddShow{
 			display: none;
 		}
-		#loginPanel{
-			padding: 20px;
-		}
 		</style>
 	</head>
 	<body ng-controller="myLib">
-		<div id="loginPanel" class="container text-center">
-			<input type="text" id="loginApp" placeholder="login">
-			<input type="password" id="passApp" placeholder="hasło">
-			<button ng-click="loginFun()">Zaloguj</button>
-			<button ng-click="registrationFun()">Zarejestruj</button>
-		</div>
+		<div id="loading"></div>
+		<div id="loginPanel" class="text-center">
 
+				<h2>Panel logowania</h2>
+				<div>
+					<span>
+						<input type="text" id="loginApp" class="form-control" placeholder="Login">
+						<input type="password" id="passApp" class="form-control" placeholder="Hasło">
+					</span>
+				<button ng-click="loginFun()">Zaloguj</button>
+				 <p class="help-block">Jeśli nie masz konta zarejstruj się</p>
+				<button ng-click="registrationFun()">Zarejestruj</button>
+			</div>
+		</div>
 		<navigation></navigation>
 		<div id="addRecipe"></div>
-		<div class="container">
+		<section class="container">
 			<div class="row">
 				<div id="subcategories"></div>
-				<div id="details"></div>
+				<article id="details"></article>
 			<div id="lastAddShow">
-				<div ng-show="homeShow">
+				<article ng-show="homeShow">
 					<h3 class="text-center">Ostatnio dodane:</h3>
 					<div id="lastAllAdd"></div>
 					<div class="clearfix"></div>
 					<hr/>
-				</div>
-				<div ng-show="homeShow">
+				</article>
+				<article ng-show="homeShow">
 					<h3 class="text-center">Ostatnio dodane śniadania:</h3>
 					<div id="lastAddBreakfast"></div>
 					<div class="clearfix"></div>
 					<hr/>
-				</div>
-				<div ng-show="homeShow">
+				</article>
+				<article ng-show="homeShow">
 					<h3 class="text-center">Ostatnio dodane obiady:</h3>
 					<div id="lastAddLunch"></div>
 					<div class="clearfix"></div>
 					<hr/>
-				</div>
-				<div ng-show="homeShow">
+				</article>
+				<article ng-show="homeShow">
 					<h3 class="text-center">Ostatnio dodane desery:</h3>
 					<div id="lastAddDessert"></div>
 					<div class="clearfix"></div>
 					<hr/>
-				</div>
-				<div ng-show="homeShow">
+				</article>
+				<article ng-show="homeShow">
 					<h3 class="text-center">Ostatnio dodane przekąski:</h3>
 					<div id="lastAddSnack"></div>
 					<div class="clearfix"></div>
 					<hr/>
-				</div>
-				<div ng-show="homeShow">
+				</article>
+				<article ng-show="homeShow">
 					<h3 class="text-center">Ostatnio dodane przetwory:</h3>
 					<div id="LastAddPreserve"></div>
 					<div class="clearfix"></div>
 					<hr/>
-				</div>
-				<div ng-show="homeShow">
+				</article>
+				<article ng-show="homeShow">
 					<h3 class="text-center">Ostatnio dodane inne przepisy:</h3>
 					<div id="LastAddOther"></div>
 					<div class="clearfix"></div>
 					<hr/>
-				</div>
+				</article>
 			</div>
 		</div>
 			<div id="list"></div>
-		</div>
-	<script type="text/javascript" src="ang_app.js?v=1.1.9"></script>
+		</section>
+	<script type="text/javascript" src="ang_app.js?v=1.2.0"></script>
 	<script type="text/babel" src="modules/functions.jsx?v=1.0.2"></script>
-	<script type="text/javascript" src="data.js?v=1.2.0"></script>
-	<script type="text/babel" src="modules/details.jsx?v=1.1.5"></script>
+	<script type="text/javascript" src="data.js?v=1.2.2"></script>
+	<script type="text/babel" src="modules/details.jsx?v=1.1.6"></script>
 	<script type="text/babel" src="modules/lastAdd.jsx?v=1.0.9"></script>
 	<script type="text/babel" src="modules/list.jsx?v=1.1.9"></script>
 	<script type="text/babel" src="modules/subcategories.jsx?v=1.1.4"></script>
-	<script type="text/babel" src="modules/addRecipe.jsx?v=1.1.8"></script>
+	<script type="text/babel" src="modules/addRecipe.jsx?v=1.1.9"></script>
 	</body>
 </html>
