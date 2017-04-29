@@ -19,16 +19,6 @@ body{
     position: fixed;
 }
 #loginPanel {
-  @media all and (min-width: 800px){
-    @keyframes loginPanelAnimation {
-        from {top: -1000%;}
-        to {top: 50%;}
-    }
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: #000 0px 0px 20px;
-  }
   @media all and (max-width: 799px){
     @keyframes loginPanelAnimation {
         from {top: -1000%;}
@@ -49,9 +39,6 @@ body{
     .container_login{
       display: inline-grid;
       span{
-        @media all and (min-width: 800px){
-          padding: 0 50px;
-        }
         input{
           margin: 10px auto;
           font-size: 1.5em;
@@ -95,6 +82,23 @@ body{
 }
 }
 @media all and (min-width: 800px){
+  #loginPanel{
+    @keyframes loginPanelAnimation {
+        from {top: -1000%;}
+        to {top: 50%;}
+    }
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);;
+    margin-top:20px;
+    h2{
+      display: none;
+    }
+    .container_login button, .container_login input{
+      border-radius: 15px;
+    }
+  }
   #bg-login{
     background-image: url(img/login-background.png);
     background-size: 100%;
