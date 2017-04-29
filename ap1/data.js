@@ -23,8 +23,8 @@ function checkUser(name, pass){
 					getData();
 					loggedIn = true;
 					$('navigation').css({'display': 'block'});
-					$('#loginPanel').css({'display': 'none'});
-					$(' #lastAddShow').css({'display': 'block'});
+					$('#lastAddShow').css({'display': 'flex'});
+					$('#loginPanel, #bg-login').css({'display': 'none'});
 					document.querySelector('#welcomeUser').innerHTML="Witaj "+user.name;
 
 				}

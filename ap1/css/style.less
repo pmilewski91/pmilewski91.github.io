@@ -7,19 +7,15 @@ body{
 }
 .container {background-color: #fff;}
 #loading{
-  @media all and (min-width: 800px){
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  @media all and (max-width: 799px){
-    width: 100%;
-  }
     width: 240px;
     height: 160px;
     z-index: 100000;
     display: none;
-    background-image: url(img/loading.gif);
+    background: #fff url(img/loading.gif);
+    box-shadow: #000 0px 0px 20px;
     position: fixed;
 }
 #loginPanel {
@@ -50,7 +46,7 @@ body{
       background-color: @color1;
       margin: 0;
     }
-    div{
+    .container_login{
       display: inline-grid;
       span{
         @media all and (min-width: 800px){
@@ -77,3 +73,38 @@ body{
 }
 #subcategories{padding: 0 10px;}
 #details{background-color: #ececec;}
+#lastAddShow{
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  a{
+    text-decoration: none;
+    display: block;
+    h4{
+      background-color: @color1;
+      color: #000000;
+      padding: 5px 0px;
+      margin: 0;
+      text-shadow: 2px 2px #cacaca;
+      font-weight: bold;
+    }
+    &:hover{
+      border: @color1 solid 5px;
+      -webkit-transition: border 0.2s; /* Safari */
+      transition: border 0.2s;
+  }
+}
+}
+@media all and (min-width: 800px){
+  #bg-login{
+    background-image: url(img/login-background.png);
+    background-size: 100%;
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: loginPanelAnimation;
+    animation-duration: 2s;
+  }
+}
