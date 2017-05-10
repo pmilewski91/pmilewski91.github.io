@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Novisa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=1.3.3">
+    <link rel="stylesheet" href="css/styles.css?v=1.3.7">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
     <script src="frameworks/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -65,11 +65,16 @@
     </header>
 
     <script>
-      //header height
+
       var header_height = window.innerHeight;
-      $('header').css({'height':header_height});
-      //.header_article vertically center in the header
-      $('.header_article').css({'margin-top':(header_height/2 - $('.header_article').height())});
+      var header_width = window.innerWidth;
+      if(header_width > 767){
+        //header height
+        $('header').css({'height':header_height});
+        //.header_article vertically center in the header
+        $('.header_article').css({'margin-top':(header_height/2 - $('.header_article').height())});
+      }
+
       // fixed navbar
       $(window).bind('scroll', function(){
         if($(this).scrollTop() > $('nav').height()) {

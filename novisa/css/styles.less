@@ -111,3 +111,21 @@ header{
 .inline-block{
   display: inline-block;
 }
+@media all and (max-width: 1200px){
+  header nav .navbar-link a{
+    font-size: 14px;
+    padding: 5px;
+  }
+  header nav p a{
+    margin-right: 10px;
+  }
+}
+@media all and (max-width: 767px){
+  .navbar-collapse div{
+    float:none !important;
+  }
+  header section article{
+    width:100%;
+    max-width: none;
+  }
+}
