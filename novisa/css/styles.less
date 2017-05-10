@@ -34,7 +34,7 @@ header{
       a{
         color: #FFFFFF;
         font-size: 18px;
-        &:hover{
+        &:hover, &:focus{
           background-color:transparent !important;
           color: @color1;
           -webkit-transition: color 0.6s; /* Safari */
@@ -111,7 +111,12 @@ header{
 .inline-block{
   display: inline-block;
 }
-@media all and (max-width: 1200px){
+@media all and (min-width: 1400px){
+  header section {
+      margin-top: 15%;
+  }
+}
+@media all and (max-width: 1200px) and (min-width: 768px){
   header nav .navbar-link a{
     font-size: 14px;
     padding: 5px;
@@ -123,9 +128,5 @@ header{
 @media all and (max-width: 767px){
   .navbar-collapse div{
     float:none !important;
-  }
-  header section article{
-    width:100%;
-    max-width: none;
   }
 }
