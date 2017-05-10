@@ -1,0 +1,113 @@
+// out: styles.css, sourcemap: true, compress: true
+
+@color1: #00AAF2;
+body{
+  font-family: "Neo Sans Pro";
+}
+header{
+  background: url(../img/photo_02.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  nav {
+    color: #FFFFFF;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.66) 34%, rgba(0,0,0,0.53) 47%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    p a{
+      color:@color1;
+      font-weight: bold;
+      margin-right: 26px;
+      &:hover{
+        color: @color1/2;
+        -webkit-transition: color 0.6s; /* Safari */
+        transition: color 0.6s;
+        text-decoration: none;
+      }
+    }
+    div > div > a:nth-last-child(2){
+      margin-right: 10px;
+    }
+    .navbar-link{
+      a{
+        color: #FFFFFF;
+        font-size: 18px;
+        &:hover{
+          background-color:transparent !important;
+          color: @color1;
+          -webkit-transition: color 0.6s; /* Safari */
+          transition: color 0.6s;
+        }
+      }
+      .active-link{
+        color: @color1;
+        border-bottom: 2px solid #00AAF2;
+      }
+    }
+    .navbar-header{
+      button{
+        background-color: rgb(0, 145, 228);
+        float: none;
+        width:100%;
+        cursor: pointer;
+      }
+      .icon-bar{
+        background-color: #d9d7d4;
+        width:50%;
+        margin: auto;
+      }
+    }
+  }
+  .header_article {
+      background-color: #fff;
+      max-width: 382px;
+      padding:30px;
+      h2{
+          margin:0;
+          font-size: 48px;
+      }
+      p{
+          font-size:30px;
+          margin:0 0 5px 0;
+      }
+      small{
+          color: #808080;
+          font-size:18px;
+      }
+      button{
+          background-color:@color1;
+          border:none;
+          color:#fff;
+          padding: 10px;
+          margin-top:20px;
+          font-size: 15px;
+              &:hover{
+                  background-color:@color1/2;
+                  -webkit-transition: color 0.6s; /* Safari */
+                  transition: background-color 0.6s;
+                  }
+      }
+  }
+  section{
+        margin-top:5%;
+        background-color:#fff;
+        article{
+            max-width:270px;
+            padding:20px;
+            font-size: 16px;
+            p{
+              margin:0;
+            }
+        }
+        .active{
+            background-color: @color1;
+            color: #fff;
+        }
+    }
+}
+
+.inline-block{
+  display: inline-block;
+}
