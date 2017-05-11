@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <title>Novisa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=1.4.6">
+    <link rel="stylesheet" href="css/styles.css?v=1.6.9">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
     <script src="frameworks/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="frameworks/bootstrap/dist/js/bootstrap-select.js"></script>
   </head>
   <body>
     <header>
@@ -62,7 +64,104 @@
           </article>
         </section>
       </div>
+      <div class="contact">
+        <h3>Skontaktuj się z nami</h3>
+        <div class="contact_form">
+
+            <input type="text" class="form-control" placeholder="Imię i nazwisko">
+            <input type="text" class="form-control" placeholder="Adres e-mail">
+            <input type="text" class="form-control" placeholder="Numer telefonu">
+            <textarea class="form-control" rows="3"></textarea>
+            <button type="submit" class="btn btn-default">Wyślij</button>
+
+        </div>
+      </div>
     </header>
+    <section>
+      <div class="container">
+        <h3>Twój nowy dom</h3>
+        <p class="small2">Skorzystaj z wyszukiwarki a błyskawicznie znajdziesz nowe mieszkanie w Warszawie idealnie dopasowane do Twoich potrzeb.</p>
+        <div class="inline-block">
+          <div class="form-group">
+            <label for="lokalizacja">Lokalizacja</label>
+            <select id="lokalizacja" class="selectpicker form-control" data-live-search="true" title="wszystkie inwestycje">
+              <option>lokalizacja 1</option>
+              <option>lokalizacja 2</option>
+              <option>lokalizacja 3</option>
+              <option>lokalizacja 4</option>
+              <option>lokalizacja 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block">
+          <div class="form-group">
+            <label for="metraz">Metraż</label>
+            <select id="metraz" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+              <option>powierzchnia 1</option>
+              <option>powierzchnia 2</option>
+              <option>powierzchnia 3</option>
+              <option>powierzchnia 4</option>
+              <option>powierzchnia 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block">
+          <div class="form-group">
+            <label for="cena">Cena</label>
+            <select id="cena" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+              <option>cena 1</option>
+              <option>cena 2</option>
+              <option>cena 3</option>
+              <option>cena 4</option>
+              <option>cena 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block">
+          <div class="form-group">
+            <label for="pokoje">Liczba pokoi</label>
+            <select id="pokoje" class="selectpicker form-control" data-live-search="true" title="3">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block">
+
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nr</th>
+                <th>Piętro</th>
+                <th>Pokoje</th>
+                <th>Powierzchnia</th>
+                <th>Loggia/balkon/taras</th>
+                <th>Ogród</th>
+                <th>Zapytaj o ofertę</th>
+                <th>Pobierz</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A102</td>
+                <td>2</td>
+                <td>3</td>
+                <td>73,54m2</td>
+                <td>Nie/Nie/8,15m2</td>
+                <td>Nie</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
   <script>
 $(document).ready(function(){
@@ -84,7 +183,40 @@ $(document).ready(function(){
        }
      }
   });
+  // show contact
+  var contact_show = 0;
+  $('.contact h3').click(function(){
+    if(contact_show == 0){
+      $('.contact').animate({right: '30px'}, 'slow');
+      contact_show = 1;
+    }else{
+      $('.contact').animate({right: '-260px'}, 'slow');
+      contact_show = 0;
+    }
+
+  });
 });
+
+  </script>
+  <script>
+    $(document).ready(function () {
+      var mySelect = $('#first-disabled2');
+
+      $('#special').on('click', function () {
+        mySelect.find('option:selected').prop('disabled', true);
+        mySelect.selectpicker('refresh');
+      });
+
+      $('#special2').on('click', function () {
+        mySelect.find('option:disabled').prop('disabled', false);
+        mySelect.selectpicker('refresh');
+      });
+
+      $('#basic2').selectpicker({
+        liveSearch: true,
+        maxOptions: 1
+      });
+    });
   </script>
   </body>
 </html>

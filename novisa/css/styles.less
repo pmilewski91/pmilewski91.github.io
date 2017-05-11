@@ -10,7 +10,7 @@ header{
 
   nav {
     color: #FFFFFF;
-    padding: 10px 0;
+    padding: 20px 0;
     border-top: 1px solid rgba(255,255,255,0.1);
     background: -moz-linear-gradient(top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.66) 34%, rgba(0,0,0,0.53) 47%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -97,6 +97,7 @@ header{
             max-width:270px;
             padding:20px;
             font-size: 16px;
+            border-right: 1px solid #D9D9D9;
             p{
               margin:0;
             }
@@ -106,10 +107,50 @@ header{
             color: #fff;
         }
     }
+    .contact{
+       position:fixed;
+       top:50%;
+       right: -260px;
+       background-color:#fff;
+       /* Safari */
+       -webkit-transform: rotate(-90deg) translateX(50%);
+       /* Firefox */
+       -moz-transform: rotate(-90deg) translateX(50%);
+       /* IE */
+       -ms-transform: rotate(-90deg) translateX(50%);
+       /* Opera */
+       -o-transform: rotate(-90deg) translateX(50%);
+       h3{
+           background-color: rgba(251,50,16,1);
+           color:#fff;
+           padding:10px 20px;
+           margin: 0;
+           cursor: pointer;
+       }
+       .contact_form{
+            padding:20px;
+            /* Safari */
+            -webkit-transform: rotate(90deg);
+            /* Firefox */
+            -moz-transform: rotate(90deg);
+            /* IE */
+            -ms-transform: rotate(90deg);
+            /* Opera */
+            -o-transform: rotate(90deg);
+            input, textarea{
+                margin-bottom:10px;
+            }
+        }
+   }
 }
 
 .inline-block{
   display: inline-block;
+}
+.small2{
+  color: #999999;
+  font-family: "Open Sans";
+  font-size: 16px;
 }
 @media all and (min-width: 1400px){
   header section {
