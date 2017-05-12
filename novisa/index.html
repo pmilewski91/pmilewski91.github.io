@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Novisa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=1.6.9">
+    <link rel="stylesheet" href="css/styles.css?v=1.9.4">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
@@ -78,62 +78,66 @@
       </div>
     </header>
     <section>
-      <div class="container">
-        <h3>Twój nowy dom</h3>
-        <p class="small2">Skorzystaj z wyszukiwarki a błyskawicznie znajdziesz nowe mieszkanie w Warszawie idealnie dopasowane do Twoich potrzeb.</p>
-        <div class="inline-block">
-          <div class="form-group">
-            <label for="lokalizacja">Lokalizacja</label>
-            <select id="lokalizacja" class="selectpicker form-control" data-live-search="true" title="wszystkie inwestycje">
-              <option>lokalizacja 1</option>
-              <option>lokalizacja 2</option>
-              <option>lokalizacja 3</option>
-              <option>lokalizacja 4</option>
-              <option>lokalizacja 5</option>
-            </select>
+        <div class="box container">
+          <h3>Twój nowy dom</h3>
+          <p class="small2">Skorzystaj z wyszukiwarki a błyskawicznie znajdziesz nowe mieszkanie w Warszawie idealnie dopasowane do Twoich potrzeb.</p>
+          <br/>
+          <div class="inline-block search-home-input">
+            <div class="form-group">
+              <label for="lokalizacja">Lokalizacja</label>
+              <select id="lokalizacja" class="selectpicker form-control" data-live-search="true" title="wszystkie inwestycje">
+                <option>lokalizacja 1</option>
+                <option>lokalizacja 2</option>
+                <option>lokalizacja 3</option>
+                <option>lokalizacja 4</option>
+                <option>lokalizacja 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="inline-block search-home-input">
+            <div class="form-group">
+              <label for="metraz">Metraż</label>
+              <select id="metraz" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+                <option>powierzchnia 1</option>
+                <option>powierzchnia 2</option>
+                <option>powierzchnia 3</option>
+                <option>powierzchnia 4</option>
+                <option>powierzchnia 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="inline-block search-home-input">
+            <div class="form-group">
+              <label for="cena">Cena</label>
+              <select id="cena" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+                <option>cena 1</option>
+                <option>cena 2</option>
+                <option>cena 3</option>
+                <option>cena 4</option>
+                <option>cena 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="inline-block search-home-input">
+            <div class="form-group">
+              <label for="pokoje">Liczba pokoi</label>
+              <select id="pokoje" class="selectpicker form-control" data-live-search="true" title="3">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="inline-block">
+            <button type="button" class="btn search-home-button">Znajdź</button>
           </div>
         </div>
-        <div class="inline-block">
-          <div class="form-group">
-            <label for="metraz">Metraż</label>
-            <select id="metraz" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
-              <option>powierzchnia 1</option>
-              <option>powierzchnia 2</option>
-              <option>powierzchnia 3</option>
-              <option>powierzchnia 4</option>
-              <option>powierzchnia 5</option>
-            </select>
-          </div>
-        </div>
-        <div class="inline-block">
-          <div class="form-group">
-            <label for="cena">Cena</label>
-            <select id="cena" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
-              <option>cena 1</option>
-              <option>cena 2</option>
-              <option>cena 3</option>
-              <option>cena 4</option>
-              <option>cena 5</option>
-            </select>
-          </div>
-        </div>
-        <div class="inline-block">
-          <div class="form-group">
-            <label for="pokoje">Liczba pokoi</label>
-            <select id="pokoje" class="selectpicker form-control" data-live-search="true" title="3">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </div>
-        <div class="inline-block">
+        <hr/>
 
-        </div>
-        <div class="table-responsive">
-          <table class="table">
+        <div class="container box table-responsive">
+          <table class="table text-center">
             <thead>
               <tr>
                 <th>Nr</th>
@@ -157,8 +161,127 @@
                 <td>Zapytaj o ofertę</td>
                 <td>Schemat</td>
               </tr>
+              <tr>
+                <td>A105</td>
+                <td>5</td>
+                <td>2</td>
+                <td>48,51m2</td>
+                <td>Nie/Nie/8,15m2</td>
+                <td>Nie</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
+              <tr>
+                <td>A106</td>
+                <td>1</td>
+                <td>2</td>
+                <td>54,21m2</td>
+                <td>Tak/Nie/10,12m2</td>
+                <td>Nie</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
+              <tr>
+                <td>A107</td>
+                <td>9</td>
+                <td>3</td>
+                <td>87,56m2</td>
+                <td>Nie/Tak/8,15m2</td>
+                <td>Tak</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
+              <tr>
+                <td>A108</td>
+                <td>3</td>
+                <td>5</td>
+                <td>73,54m2</td>
+                <td>Nie/Tak/3,33m2</td>
+                <td>Tak</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
+              <tr>
+                <td>A109</td>
+                <td>5</td>
+                <td>3</td>
+                <td>120,24m2</td>
+                <td>Nie/Tak/12,04m2</td>
+                <td>Nie</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
+              <tr>
+                <td>A110</td>
+                <td>4</td>
+                <td>2</td>
+                <td>73,54m2</td>
+                <td>Tak/Nie/9,20m2</td>
+                <td>Nie</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
+              <tr>
+                <td>A111</td>
+                <td>2</td>
+                <td>3</td>
+                <td>72,43m2</td>
+                <td>Nie/Nie/8,15m2</td>
+                <td>Tak</td>
+                <td>Zapytaj o ofertę</td>
+                <td>Schemat</td>
+              </tr>
             </tbody>
           </table>
+          <p class="small2 pull-left">Znaleziono 16 ofert</p>
+          <a href="#" class="small2 pull-right">następna strona <span class="glyphicon glyphicon-menu-right" style="font-size: 10px;"></span></a>
+        </div>
+    </section>
+    <section class="section-img">
+      <div class="container">
+        <article class="section_article">
+            <h2>Gotowe do zamieszkania</h2>
+            <small>Przekonaj się że wykończenie mieszkania wcale nie musi być drogie i czasochłonne. Skorzystaj z naszej oferty wykończenia pod klucz.</small>
+            <button>Sprawdź teraz</button>
+        </article>
+      </div>
+    </section>
+    <section class="container box text-center">
+      <h2>Nasze realizacje</h2>
+      <p style="padding:0 50px;" class="small2">Kliknij w najciekawszą dla Ciebie inwestycję i zobacz co przygotowaliśmy. W naszej ofercie znajdziesz zarówno wygodne apartamenty w Warszawie, mieszkania w systemie MdM oraz nowe domy pod Warszawą. Sprawdź szczegóły oferty, a jeśli zostawisz nam swój adres email lub numer telefonu oddzwonimy do Ciebie w indywidualną propozycją.</p>
+    </section>
+    <section class="container box">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+              <h3>Novisa Garden - Nowa Wola</h3>
+              <p>Szukasz mieszkania, w którym poczujesz standard domu jednorodzinnego? Chciałbyś otrzymać w pakiecie dwa miejsca postojowe, salon z kominkiem i ogród? Jeśli tak,
+to zapraszamy do zapoznania się z ofertą Novisa Garden.</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+              <h3>Owocowy Sad - Piaseczno</h3>
+              <p>Własny dom w sąsiedztwie Lasu Kabackiego? Teraz to możliwe. Owocowy Sad 2 to inwestycja, w której oferujemy domy w niezwykle konkurencyjnej cenie już od 379.000 złotych!</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+              <h3>Ogrody Przyjaciół - Białołęka</h3>
+              <p>Ogrody Przyjaciół to kameralne, ogrodzone osiedle na Zielonej Białołęce objęte programem MDM. Zdecydowanie najlepsza  w Warszawie oferta dla osób, które za cenę średniej wielkości mieszkania pragną zamieszkać we własnym domku z ogrodem i kominkiem.</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -197,26 +320,6 @@ $(document).ready(function(){
   });
 });
 
-  </script>
-  <script>
-    $(document).ready(function () {
-      var mySelect = $('#first-disabled2');
-
-      $('#special').on('click', function () {
-        mySelect.find('option:selected').prop('disabled', true);
-        mySelect.selectpicker('refresh');
-      });
-
-      $('#special2').on('click', function () {
-        mySelect.find('option:disabled').prop('disabled', false);
-        mySelect.selectpicker('refresh');
-      });
-
-      $('#basic2').selectpicker({
-        liveSearch: true,
-        maxOptions: 1
-      });
-    });
   </script>
   </body>
 </html>
