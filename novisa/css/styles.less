@@ -166,7 +166,6 @@ header{
 }
 .box{
   padding: 20px 0;
-
 }
 .section-img{
   background: url(../img/wnetrze-mieszkania-5k.jpg) no-repeat center center;
@@ -227,6 +226,31 @@ header{
         }
     }
 }
+.thumbnail-img{
+  max-width: 360px;
+}
+.thumbnail{
+  border-top: 0 !important;
+  .caption{
+    min-height: 250px;
+  }
+  .thumbnail-btn{
+    padding: 0 40px;
+    a{
+      width: 100%;
+      background-color: @color1;
+      color: #fff;
+      border-radius: 0;
+      font-weight: bold;
+      padding: 10px 0;
+      &:hover{
+          background-color:@color1/2;
+          -webkit-transition: color 0.6s; /* Safari */
+          transition: background-color 0.6s;
+          }
+    }
+  }
+}
 hr{
   margin-top: 0 !important;
   margin-bottom: 0 !important;
@@ -245,7 +269,16 @@ hr{
       margin-top: 15%;
   }
 }
+@media all and (max-width: 768px) and (min-width: 590px){
+  body > header > div.container > section{
+    display: flex;
+  }
+}
 @media all and (max-width: 1200px) and (min-width: 768px){
+  .logo{
+    padding: 0;
+    margin: 0;
+  }
   header nav .navbar-link a{
     font-size: 14px;
     padding: 5px;
@@ -254,12 +287,54 @@ hr{
     margin-right: 10px;
   }
 }
-@media all and (max-width: 767px){
-  .navbar-collapse div{
-    float:none !important;
+@media all and (max-width: 768px){
+  #bs-example-navbar-collapse-1 > div{
+    margin-top: 10px;
   }
-  header section article{
-    width: 100%;
-    max-width: none;
+  .header_article, .section_article{
+    h2{
+      font-size: 40px !important;
+    }
+    p{
+      font-size: 25px !important;
+    }
+  }
+  header {
+    border-bottom: 1px solid #ccc;
+      section article{
+        width: 100%;
+        max-width: none;
+    }
+    nav{
+      background: #01212f !important;
+      text-align: center;
+      padding: 10px !important;
+      .social-media{
+        width: 49%;
+        text-align: center;
+        margin: 10px 0 0 0;
+        margin-right: 0 !important;
+      }
+      .navbar-collapse div{
+        float:none !important;
+      }
+      .navbar-header{
+        display: table-cell;
+        width: 100%;
+        padding-left: 15px;
+        vertical-align: middle;
+        button{
+          width: 50% !important;
+        }
+      }
+    }
+  }
+
+  .contact{
+    display: none;
+  }
+  .logo {
+    display: table-cell;
+    vertical-align: middle;
   }
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Novisa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=1.9.4">
+    <link rel="stylesheet" href="css/styles.css?v=2.1.4">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
@@ -15,7 +15,7 @@
     <header>
       <nav class="container-fluid" role="navigation">
         <div class="container">
-          <a class="navbar-text navbar-left" href="#"><img src="img/logo.png" alt="Novisa"/></a>
+          <a class="navbar-text navbar-left logo" href="#"><img src="img/logo.png" alt="Novisa"/></a>
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -28,8 +28,8 @@
             <div class="pull-right">
               <p class="inline-block">Napisz do nas: <a href="#">sprzedaz@novisa.pl</a></p>
               <p class="inline-block">Zadzwoń <a href="#">+48 (22) 545 70 20</a></p>
-              <a class="inline-block" href="#"><img src="img/facebook.png" alt="facebook"/></a>
-              <a class="inline-block" href="#"><img src="img/youtube.png" alt="youtube"/></a>
+              <a class="inline-block social-media" href="#"><img src="img/facebook.png" alt="facebook"/></a>
+              <a class="inline-block social-media" href="#"><img src="img/youtube.png" alt="youtube"/></a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="navbar-link"><a href="#">O nas</a></li>
@@ -78,7 +78,7 @@
       </div>
     </header>
     <section>
-        <div class="box container">
+        <div class="box container" style="padding-bottom: 0;">
           <h3>Twój nowy dom</h3>
           <p class="small2">Skorzystaj z wyszukiwarki a błyskawicznie znajdziesz nowe mieszkanie w Warszawie idealnie dopasowane do Twoich potrzeb.</p>
           <br/>
@@ -233,6 +233,8 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="container">
           <p class="small2 pull-left">Znaleziono 16 ofert</p>
           <a href="#" class="small2 pull-right">następna strona <span class="glyphicon glyphicon-menu-right" style="font-size: 10px;"></span></a>
         </div>
@@ -252,35 +254,34 @@
     </section>
     <section class="container box">
       <div class="row">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-4 col-md-4">
+          <img class="thumbnail-img img-responsive" src="img/wola.jpg" alt="Novisa Garden - Nowa Wola">
           <div class="thumbnail">
-            <img src="..." alt="...">
             <div class="caption">
               <h3>Novisa Garden - Nowa Wola</h3>
-              <p>Szukasz mieszkania, w którym poczujesz standard domu jednorodzinnego? Chciałbyś otrzymać w pakiecie dwa miejsca postojowe, salon z kominkiem i ogród? Jeśli tak,
-to zapraszamy do zapoznania się z ofertą Novisa Garden.</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+              <p>Szukasz mieszkania, w którym poczujesz standard domu jednorodzinnego? Chciałbyś otrzymać w pakiecie dwa miejsca postojowe, salon z kominkiem i ogród? Jeśli tak, to zapraszamy do zapoznania się z ofertą Novisa Garden.</p>
             </div>
+            <p class="thumbnail-btn"><a href="#" class="btn" role="button">Button</a></p>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-4 col-md-4">
+          <img class="thumbnail-img img-responsive" src="img/piaseczno.jpg" alt="Owocowy Sad - Piaseczno">
           <div class="thumbnail">
-            <img src="..." alt="...">
             <div class="caption">
               <h3>Owocowy Sad - Piaseczno</h3>
               <p>Własny dom w sąsiedztwie Lasu Kabackiego? Teraz to możliwe. Owocowy Sad 2 to inwestycja, w której oferujemy domy w niezwykle konkurencyjnej cenie już od 379.000 złotych!</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
             </div>
+            <p class="thumbnail-btn"><a href="#" class="btn" role="button">Button</a></p>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-4 col-md-4">
+          <img class="thumbnail-img img-responsive" src="img/bialoleka.jpg" alt="Ogrody Przyjaciół - Białołęka">
           <div class="thumbnail">
-            <img src="..." alt="...">
             <div class="caption">
               <h3>Ogrody Przyjaciół - Białołęka</h3>
               <p>Ogrody Przyjaciół to kameralne, ogrodzone osiedle na Zielonej Białołęce objęte programem MDM. Zdecydowanie najlepsza  w Warszawie oferta dla osób, które za cenę średniej wielkości mieszkania pragną zamieszkać we własnym domku z ogrodem i kominkiem.</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
             </div>
+            <p class="thumbnail-btn"><a href="#" class="btn" role="button">Button</a></p>
           </div>
         </div>
       </div>
