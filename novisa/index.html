@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Novisa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=2.1.4">
+    <link rel="stylesheet" href="css/styles.css?v=2.4.1">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
@@ -82,56 +82,58 @@
           <h3>Twój nowy dom</h3>
           <p class="small2">Skorzystaj z wyszukiwarki a błyskawicznie znajdziesz nowe mieszkanie w Warszawie idealnie dopasowane do Twoich potrzeb.</p>
           <br/>
-          <div class="inline-block search-home-input">
-            <div class="form-group">
-              <label for="lokalizacja">Lokalizacja</label>
-              <select id="lokalizacja" class="selectpicker form-control" data-live-search="true" title="wszystkie inwestycje">
-                <option>lokalizacja 1</option>
-                <option>lokalizacja 2</option>
-                <option>lokalizacja 3</option>
-                <option>lokalizacja 4</option>
-                <option>lokalizacja 5</option>
-              </select>
+          <div class="search-home-input-group">
+            <div class="inline-block search-home-input">
+              <div class="form-group">
+                <label for="lokalizacja">Lokalizacja</label>
+                <select id="lokalizacja" class="selectpicker form-control" data-live-search="true" title="wszystkie inwestycje">
+                  <option>lokalizacja 1</option>
+                  <option>lokalizacja 2</option>
+                  <option>lokalizacja 3</option>
+                  <option>lokalizacja 4</option>
+                  <option>lokalizacja 5</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="inline-block search-home-input">
-            <div class="form-group">
-              <label for="metraz">Metraż</label>
-              <select id="metraz" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
-                <option>powierzchnia 1</option>
-                <option>powierzchnia 2</option>
-                <option>powierzchnia 3</option>
-                <option>powierzchnia 4</option>
-                <option>powierzchnia 5</option>
-              </select>
+            <div class="inline-block search-home-input">
+              <div class="form-group">
+                <label for="metraz">Metraż</label>
+                <select id="metraz" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+                  <option>powierzchnia 1</option>
+                  <option>powierzchnia 2</option>
+                  <option>powierzchnia 3</option>
+                  <option>powierzchnia 4</option>
+                  <option>powierzchnia 5</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="inline-block search-home-input">
-            <div class="form-group">
-              <label for="cena">Cena</label>
-              <select id="cena" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
-                <option>cena 1</option>
-                <option>cena 2</option>
-                <option>cena 3</option>
-                <option>cena 4</option>
-                <option>cena 5</option>
-              </select>
+            <div class="inline-block search-home-input">
+              <div class="form-group">
+                <label for="cena">Cena</label>
+                <select id="cena" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+                  <option>cena 1</option>
+                  <option>cena 2</option>
+                  <option>cena 3</option>
+                  <option>cena 4</option>
+                  <option>cena 5</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="inline-block search-home-input">
-            <div class="form-group">
-              <label for="pokoje">Liczba pokoi</label>
-              <select id="pokoje" class="selectpicker form-control" data-live-search="true" title="3">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+            <div class="inline-block search-home-input">
+              <div class="form-group">
+                <label for="pokoje">Liczba pokoi</label>
+                <select id="pokoje" class="selectpicker form-control" data-live-search="true" title="3">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="inline-block">
-            <button type="button" class="btn search-home-button">Znajdź</button>
+            <div class="inline-block">
+              <button type="button" class="btn search-home-button">Znajdź</button>
+            </div>
           </div>
         </div>
         <hr/>
@@ -158,8 +160,8 @@
                 <td>73,54m2</td>
                 <td>Nie/Nie/8,15m2</td>
                 <td>Nie</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
               <tr>
                 <td>A105</td>
@@ -168,8 +170,8 @@
                 <td>48,51m2</td>
                 <td>Nie/Nie/8,15m2</td>
                 <td>Nie</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
               <tr>
                 <td>A106</td>
@@ -178,8 +180,8 @@
                 <td>54,21m2</td>
                 <td>Tak/Nie/10,12m2</td>
                 <td>Nie</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
               <tr>
                 <td>A107</td>
@@ -188,8 +190,8 @@
                 <td>87,56m2</td>
                 <td>Nie/Tak/8,15m2</td>
                 <td>Tak</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
               <tr>
                 <td>A108</td>
@@ -198,8 +200,8 @@
                 <td>73,54m2</td>
                 <td>Nie/Tak/3,33m2</td>
                 <td>Tak</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
               <tr>
                 <td>A109</td>
@@ -208,8 +210,8 @@
                 <td>120,24m2</td>
                 <td>Nie/Tak/12,04m2</td>
                 <td>Nie</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
               <tr>
                 <td>A110</td>
@@ -218,8 +220,8 @@
                 <td>73,54m2</td>
                 <td>Tak/Nie/9,20m2</td>
                 <td>Nie</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
               <tr>
                 <td>A111</td>
@@ -228,8 +230,8 @@
                 <td>72,43m2</td>
                 <td>Nie/Nie/8,15m2</td>
                 <td>Tak</td>
-                <td>Zapytaj o ofertę</td>
-                <td>Schemat</td>
+                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
+                <td><a class="scheme" href="#">Schemat</a></td>
               </tr>
             </tbody>
           </table>
@@ -250,7 +252,7 @@
     </section>
     <section class="container box text-center">
       <h2>Nasze realizacje</h2>
-      <p style="padding:0 50px;" class="small2">Kliknij w najciekawszą dla Ciebie inwestycję i zobacz co przygotowaliśmy. W naszej ofercie znajdziesz zarówno wygodne apartamenty w Warszawie, mieszkania w systemie MdM oraz nowe domy pod Warszawą. Sprawdź szczegóły oferty, a jeśli zostawisz nam swój adres email lub numer telefonu oddzwonimy do Ciebie w indywidualną propozycją.</p>
+      <p class="small2">Kliknij w najciekawszą dla Ciebie inwestycję i zobacz co przygotowaliśmy. W naszej ofercie znajdziesz zarówno wygodne apartamenty w Warszawie, mieszkania w systemie MdM oraz nowe domy pod Warszawą. Sprawdź szczegóły oferty, a jeśli zostawisz nam swój adres email lub numer telefonu oddzwonimy do Ciebie w indywidualną propozycją.</p>
     </section>
     <section class="container box">
       <div class="row">
@@ -285,6 +287,7 @@
           </div>
         </div>
       </div>
+      <a href="#" class="btn grey-btn" role="button">Zobacz więcej</a>
     </section>
 
   <script>
@@ -301,10 +304,14 @@ $(document).ready(function(){
     $(window).bind('scroll', function(){
       if($(this).scrollTop() > $('nav').height()) {
         $('nav').addClass('navbar-fixed-top');
+        if(header_width <= 1200){
+          $('.logo').css({'margin': '5px 0'});
+        }
      }else if($(this).scrollTop() < 20){
        if($('nav').hasClass('navbar-fixed-top')){
          $('nav').removeClass('navbar-fixed-top');
        }
+       $('.logo').css({'margin': '15px 15px 15px 0'});
      }
   });
   // show contact
@@ -313,6 +320,7 @@ $(document).ready(function(){
     if(contact_show == 0){
       $('.contact').animate({right: '30px'}, 'slow');
       contact_show = 1;
+
     }else{
       $('.contact').animate({right: '-260px'}, 'slow');
       contact_show = 0;

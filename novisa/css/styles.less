@@ -7,7 +7,10 @@ body{
 header{
   background: url(../img/photo_02.jpg) no-repeat center center;
   background-size: cover;
-
+  .navbar-fixed-top{
+    padding: 5px 0 !important;
+    background: #01212f !important;
+  }
   nav {
     color: #FFFFFF;
     padding: 20px 0;
@@ -26,6 +29,9 @@ header{
         transition: color 0.6s;
         text-decoration: none;
       }
+    }
+    .logo{
+      margin-left: 0;
     }
     div > div > a:nth-last-child(2){
       margin-right: 10px;
@@ -83,6 +89,7 @@ header{
           padding: 10px;
           margin-top:20px;
           font-size: 15px;
+          width: 100%;
               &:hover{
                   background-color:@color1/2;
                   -webkit-transition: color 0.6s; /* Safari */
@@ -145,7 +152,7 @@ header{
    }
 }
 .search-home-input{
-  max-width: 220px;
+  max-width: 255px;
   width: 100%;
   border-radius: 0;
 }
@@ -153,7 +160,7 @@ header{
     background-color: @color1;
     color:#fff;
     border-radius: 0 !important;
-    padding:5px 20px !important;
+    padding:5px 30px !important;
     &:hover{
         color:#fff !important;
         background-color:@color1/2;
@@ -176,7 +183,7 @@ header{
       max-width: 382px;
       padding:30px;
       h2{
-          margin:0;
+          margin: 0 0 10px 0;
           font-size: 48px;
       }
       p{
@@ -194,6 +201,7 @@ header{
           padding: 10px;
           margin-top:20px;
           font-size: 15px;
+          width: 100%;
               &:hover{
                   background-color:@color1/2;
                   -webkit-transition: color 0.6s; /* Safari */
@@ -223,6 +231,23 @@ header{
           td{
             border-top: none !important;
           }
+        }
+        .table-button{
+            border:1px solid @color1;
+            background-color: #ffffff;
+            color: #000;
+            &:hover{
+                color:#fff;
+                background-color: @color1;
+                border: 1px solid #ffffff;
+                -webkit-transition: background-color 0.6s;
+                transition: background-color 0.6s;
+            }
+        }
+        .scheme{
+          text-decoration: underline;
+          font-weight: bold;
+          vertical-align: -webkit-baseline-middle;
         }
     }
 }
@@ -264,6 +289,26 @@ hr{
   font-family: "Open Sans";
   font-size: 16px;
 }
+body > section.container.box.text-center > p{
+  padding: 0 100px;
+}
+.grey-btn{
+  background-color: #B3B3B3;
+  color: #fff;
+  border-radius: 0 !important;
+  font-weight: bold !important;
+  display: block !important;
+  padding: 10px 0px !important;
+  max-width: 270px;
+  margin: auto;
+  text-align: center !important;
+  &:hover{
+    background-color: #7b7b7b;
+    color:#fff !important;
+    -webkit-transition: background-color 0.6s; /* Safari */
+    transition: background-color 0.6s;
+  }
+}
 @media all and (min-width: 1400px){
   header section {
       margin-top: 15%;
@@ -286,12 +331,28 @@ hr{
   header nav p a{
     margin-right: 10px;
   }
+  .search-home-input-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .search-home-input{
+      margin-right: 5px;
+    }
+    .search-home-button{
+      margin-top:10px;
+    }
+  }
+
 }
-@media all and (max-width: 768px){
+@media all and (max-width: 767px){
   #bs-example-navbar-collapse-1 > div{
     margin-top: 10px;
   }
+  body > section.container.box.text-center > p{
+    padding: 0;
+  }
   .header_article, .section_article{
+    padding: 0;
     h2{
       font-size: 40px !important;
     }
@@ -336,5 +397,16 @@ hr{
   .logo {
     display: table-cell;
     vertical-align: middle;
+  }
+  .thumbnail .caption{
+    min-height: 0;
+  }
+  .grey-btn{
+    width: 100% !important;
+  }
+}
+@media all and (max-width: 500px){
+  .thumbnail-img{
+    max-width: none !importants;
   }
 }
