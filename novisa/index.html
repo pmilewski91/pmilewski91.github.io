@@ -4,302 +4,96 @@
     <meta charset="utf-8">
     <title>Novisa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=2.4.9">
+    <link rel="stylesheet" href="css/styles.css?v=2.9.0">
+    <link rel="stylesheet" href="css/offer.css?v=1.1.5">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
+    <link rel="stylesheet" href="../frameworks/bootstrap/dist/css/bootstrap-select.css">
     <script src="frameworks/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="frameworks/bootstrap/dist/js/bootstrap-select.js"></script>
+    <script src="../frameworks/bootstrap/dist/js/bootstrap-select.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
   </head>
-  <body>
-    <header>
-      <nav class="container-fluid" role="navigation">
-        <div class="container">
-          <a class="navbar-text navbar-left logo" href="#"><img src="img/logo.png" alt="Novisa"/></a>
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="pull-right">
-              <p class="inline-block">Napisz do nas: <a href="#">sprzedaz@novisa.pl</a></p>
-              <p class="inline-block">Zadzwoń <a href="#">+48 (22) 545 70 20</a></p>
-              <a class="inline-block social-media" href="#"><img src="img/facebook.png" alt="facebook"/></a>
-              <a class="inline-block social-media" href="#"><img src="img/youtube.png" alt="youtube"/></a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="navbar-link"><a href="#">O nas</a></li>
-                <li class="navbar-link"><a href="#">Oferta</a></li>
-                <li class="navbar-link"><a href="#">Wyszukaj mieszkanie</a></li>
-                <li class="navbar-link"><a href="#">Doradztwo kredytowe</a></li>
-                <li class="navbar-link"><a href="#">MdM</a></li>
-                <li class="navbar-link"><a href="#">Kontakt</a></li>
-            </ul>
-        </div>
-        </div>
-      </nav>
-      <div class="container">
-        <article class="header_article">
-            <h2>Spokojny dom</h2>
-            <p>w otulinie Warszawy</p>
-            <small>Twoje wymarzone miejsce - eleganckie domy tuż pod lasem i tylko 15 minut od centrum!</small>
-            <button>Zarezerwuj ostatnie wolne miejsca!</button>
-        </article>
-        <section class="inline-block">
-          <article class="inline-block active">
-            <p><strong>Ostatnie wolne mieszkania</strong><br/> na osiedlu Ogrody Przyjaciół II</p>
-          </article>
-          <article class="inline-block">
-            <p><strong>Poznaj nasze nowe osiedle</strong><br/> na Woli i skorzystaj z MdM</p>
-          </article>
-          <article class="inline-block">
-            <p><strong>Skorzystaj z doradztwa</strong><br/> kredytowego, sprawdź ofertę</p>
-          </article>
-          <article class="inline-block">
-            <p><strong>Za ile urządzisz mieszkanie?</strong><br/> Skorzystaj z kalkulatora</p>
-          </article>
-        </section>
+  <body ng-app="myApp" ng-controller="myCtrl">
+    <div ng-view></div>
+    <div class="contact">
+      <h3>Skontaktuj się z nami</h3>
+      <div class="contact_form">
+
+          <input type="text" class="form-control" placeholder="Imię i nazwisko">
+          <input type="text" class="form-control" placeholder="Adres e-mail">
+          <input type="text" class="form-control" placeholder="Numer telefonu">
+          <textarea class="form-control" rows="3"></textarea>
+          <button type="submit" class="btn btn-default">Wyślij</button>
+
       </div>
-      <div class="contact">
-        <h3>Skontaktuj się z nami</h3>
-        <div class="contact_form">
-
-            <input type="text" class="form-control" placeholder="Imię i nazwisko">
-            <input type="text" class="form-control" placeholder="Adres e-mail">
-            <input type="text" class="form-control" placeholder="Numer telefonu">
-            <textarea class="form-control" rows="3"></textarea>
-            <button type="submit" class="btn btn-default">Wyślij</button>
-
+    </div>
+    <section class="section-contact">
+      <div class="container box">
+        <div class="col-sm-6 col-md-6">
+          <h3><span class="newsletter"></span>Zapisz się do newslettera!</h3>
+          <p>Nie wysyłamy spamu! Na Twoją skrzynkę trafią tylko interesujące Cię materiały o planowanych inwestycjach i najświeższe oferty nowych domów w Warszawie.</p>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <h3><span class="telephone"></span>Zostaw swój nr telefonu!</h3>
+          <p>W ciągu 24 godzin oddzwoni do Ciebie nasz konsultant. Poznasz wszystkie szczegóły a my dobierzemy najlepszą ofertę na wygodne i tanie mieszkanie.</p>
         </div>
       </div>
-    </header>
-    <section>
-        <div class="box container" style="padding-bottom: 0;">
-          <h3>Twój nowy dom</h3>
-          <p class="small2">Skorzystaj z wyszukiwarki a błyskawicznie znajdziesz nowe mieszkanie w Warszawie idealnie dopasowane do Twoich potrzeb.</p>
-          <br/>
-          <div class="search-home-input-group">
-            <div class="inline-block search-home-input">
-              <div class="form-group">
-                <label for="lokalizacja">Lokalizacja</label>
-                <select id="lokalizacja" class="selectpicker form-control" data-live-search="true" title="wszystkie inwestycje">
-                  <option>lokalizacja 1</option>
-                  <option>lokalizacja 2</option>
-                  <option>lokalizacja 3</option>
-                  <option>lokalizacja 4</option>
-                  <option>lokalizacja 5</option>
-                </select>
-              </div>
-            </div>
-            <div class="inline-block search-home-input">
-              <div class="form-group">
-                <label for="metraz">Metraż</label>
-                <select id="metraz" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
-                  <option>powierzchnia 1</option>
-                  <option>powierzchnia 2</option>
-                  <option>powierzchnia 3</option>
-                  <option>powierzchnia 4</option>
-                  <option>powierzchnia 5</option>
-                </select>
-              </div>
-            </div>
-            <div class="inline-block search-home-input">
-              <div class="form-group">
-                <label for="cena">Cena</label>
-                <select id="cena" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
-                  <option>cena 1</option>
-                  <option>cena 2</option>
-                  <option>cena 3</option>
-                  <option>cena 4</option>
-                  <option>cena 5</option>
-                </select>
-              </div>
-            </div>
-            <div class="inline-block search-home-input">
-              <div class="form-group">
-                <label for="pokoje">Liczba pokoi</label>
-                <select id="pokoje" class="selectpicker form-control" data-live-search="true" title="3">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-            </div>
-            <div class="inline-block">
-              <button type="button" class="btn search-home-button">Znajdź</button>
-            </div>
-          </div>
-        </div>
-        <hr/>
-
-        <div class="container box table-responsive">
-          <table class="table text-center">
-            <thead>
-              <tr>
-                <th>Nr</th>
-                <th>Piętro</th>
-                <th>Pokoje</th>
-                <th>Powierzchnia</th>
-                <th>Loggia/balkon/taras</th>
-                <th>Ogród</th>
-                <th>Zapytaj o ofertę</th>
-                <th>Pobierz</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>A102</td>
-                <td>2</td>
-                <td>3</td>
-                <td>73,54m2</td>
-                <td>Nie/Nie/8,15m2</td>
-                <td>Nie</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-              <tr>
-                <td>A105</td>
-                <td>5</td>
-                <td>2</td>
-                <td>48,51m2</td>
-                <td>Nie/Nie/8,15m2</td>
-                <td>Nie</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-              <tr>
-                <td>A106</td>
-                <td>1</td>
-                <td>2</td>
-                <td>54,21m2</td>
-                <td>Tak/Nie/10,12m2</td>
-                <td>Nie</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-              <tr>
-                <td>A107</td>
-                <td>9</td>
-                <td>3</td>
-                <td>87,56m2</td>
-                <td>Nie/Tak/8,15m2</td>
-                <td>Tak</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-              <tr>
-                <td>A108</td>
-                <td>3</td>
-                <td>5</td>
-                <td>73,54m2</td>
-                <td>Nie/Tak/3,33m2</td>
-                <td>Tak</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-              <tr>
-                <td>A109</td>
-                <td>5</td>
-                <td>3</td>
-                <td>120,24m2</td>
-                <td>Nie/Tak/12,04m2</td>
-                <td>Nie</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-              <tr>
-                <td>A110</td>
-                <td>4</td>
-                <td>2</td>
-                <td>73,54m2</td>
-                <td>Tak/Nie/9,20m2</td>
-                <td>Nie</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-              <tr>
-                <td>A111</td>
-                <td>2</td>
-                <td>3</td>
-                <td>72,43m2</td>
-                <td>Nie/Nie/8,15m2</td>
-                <td>Tak</td>
-                <td><a class="btn table-button" href="#" role="button">Zapytaj o ofertę</a></td>
-                <td><a class="scheme" href="#">Schemat</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="container">
-          <p class="small2 pull-left">Znaleziono 16 ofert</p>
-          <a href="#" class="small2 pull-right">następna strona <span class="glyphicon glyphicon-menu-right" style="font-size: 10px;"></span></a>
-        </div>
     </section>
-    <section class="section-img">
-      <div class="container">
-        <article class="section_article">
-            <h2>Gotowe do zamieszkania</h2>
-            <small>Przekonaj się że wykończenie mieszkania wcale nie musi być drogie i czasochłonne. Skorzystaj z naszej oferty wykończenia pod klucz.</small>
-            <button>Sprawdź teraz</button>
-        </article>
-      </div>
-    </section>
-    <section class="container box text-center">
-      <h2>Nasze realizacje</h2>
-      <p class="small2">Kliknij w najciekawszą dla Ciebie inwestycję i zobacz co przygotowaliśmy. W naszej ofercie znajdziesz zarówno wygodne apartamenty w Warszawie, mieszkania w systemie MdM oraz nowe domy pod Warszawą. Sprawdź szczegóły oferty, a jeśli zostawisz nam swój adres email lub numer telefonu oddzwonimy do Ciebie w indywidualną propozycją.</p>
-    </section>
-    <section class="container box">
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <img class="thumbnail-img img-responsive" src="img/wola.jpg" alt="Novisa Garden - Nowa Wola">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Novisa Garden - Nowa Wola</h3>
-              <p>Szukasz mieszkania, w którym poczujesz standard domu jednorodzinnego? Chciałbyś otrzymać w pakiecie dwa miejsca postojowe, salon z kominkiem i ogród? Jeśli tak, to zapraszamy do zapoznania się z ofertą Novisa Garden.</p>
-            </div>
-            <p class="thumbnail-btn"><a href="#" class="btn" role="button">Button</a></p>
-          </div>
+    <footer>
+      <div class="container box">
+        <div class="col-sm-4 col-md-4"><img class="footer-logo" src="img/logo_stopka.png" alt="Novisa"/></div>
+        <div class="col-sm-2 col-md-2">
+          <h4>Nasze inwestycje</h4>
+          <ul>
+            <li><a href="#/">Ogrody przyjaciół</a></li>
+            <li><a href="#/">Novisa Garden</a></li>
+            <li><a href="#/">Potoki residence</a></li>
+            <li><a href="#/">Owocowy sad</a></li>
+          </ul>
         </div>
-        <div class="col-sm-4 col-md-4">
-          <img class="thumbnail-img img-responsive" src="img/piaseczno.jpg" alt="Owocowy Sad - Piaseczno">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Owocowy Sad - Piaseczno</h3>
-              <p>Własny dom w sąsiedztwie Lasu Kabackiego? Teraz to możliwe. Owocowy Sad 2 to inwestycja, w której oferujemy domy w niezwykle konkurencyjnej cenie już od 379.000 złotych!</p>
-            </div>
-            <p class="thumbnail-btn"><a href="#" class="btn" role="button">Button</a></p>
-          </div>
+        <div class="col-sm-2 col-md-2">
+          <h4>Novisa development</h4>
+          <ul>
+            <li><a href="#/">Współpraca</a></li>
+            <li><a href="#/">Prasa</a></li>
+            <li><a href="#/">Kariera</a></li>
+            <li><a href="#/">Nagrody</a></li>
+          </ul>
         </div>
-        <div class="col-sm-4 col-md-4">
-          <img class="thumbnail-img img-responsive" src="img/bialoleka.jpg" alt="Ogrody Przyjaciół - Białołęka">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Ogrody Przyjaciół - Białołęka</h3>
-              <p>Ogrody Przyjaciół to kameralne, ogrodzone osiedle na Zielonej Białołęce objęte programem MDM. Zdecydowanie najlepsza  w Warszawie oferta dla osób, które za cenę średniej wielkości mieszkania pragną zamieszkać we własnym domku z ogrodem i kominkiem.</p>
-            </div>
-            <p class="thumbnail-btn"><a href="#" class="btn" role="button">Button</a></p>
-          </div>
+        <div class="col-sm-2 col-md-2">
+          <h4>Na skróty</h4>
+          <ul>
+            <li><a href="#/">O nas</a></li>
+            <li><a href="#/">Doradztwo kredytowe</a></li>
+            <li><a href="#/">Wykończenie wnętrz</a></li>
+            <li><a href="#/">Aktualności</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-2 col-md-2">
+          <h4>Kontakt</h4>
+          <ul>
+            <li>
+              <p>Bądź z nami w kontakcie<br/>
+                 Pn - pt  9:00 - 18:00<br/>
+                 lub skorzystaj z naszego <br/>
+                 <a class="footer-contact" href="#/">formularza kontaktowego</a></p></li>
+          </ul>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="footer-bottom">
+          <div class="col-sm-4 col-md-4"><p>2016 © Novisa. Wszystkie prawa zastrzeżone.</p></div>
+          <div class="col-sm-4 col-md-4"><p class="text-center"><a href="#/">Mapa serwisu</a> <a href="#/">Polityka Cookies</a> <a href="#/">Polityka prywatności</a></p></div>
+          <div class="col-sm-4 col-md-4"><p class="text-right">Realizacja: PAGE Interactive</p></div>
         </div>
       </div>
-      <a href="#" class="btn grey-btn" role="button">Zobacz więcej</a>
-    </section>
 
+    </footer>
+  <script src="data.js?v=1.1.1"></script>
   <script>
 $(document).ready(function(){
-    var header_height = window.innerHeight;
-    var header_width = window.innerWidth;
-    if(header_width > 767){
-      //header height
-      $('header').css({'height':header_height});
-      //.header_article vertically center in the header
-      $('.header_article').css({'margin-top':(header_height/2 - $('.header_article').height())});
-    }
+  var header_height = window.innerHeight;
+  var header_width = window.innerWidth;
     // fixed navbar
     $(window).bind('scroll', function(){
       if($(this).scrollTop() > $('nav').height()) {
@@ -325,10 +119,22 @@ $(document).ready(function(){
       $('.contact').animate({right: '-260px'}, 'slow');
       contact_show = 0;
     }
-
   });
 });
 
+  var app = angular.module("myApp", ["ngRoute"]);
+  app.controller('myCtrl', function($scope) {
+    $scope.hauses = data.hauses;
+  });
+  app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "pages/main.htm?v=1.3.8"
+    })
+    .when("/oferta", {
+        templateUrl : "pages/offer.htm?v=1.1.0"
+    });
+  });
   </script>
   </body>
 </html>

@@ -1,0 +1,211 @@
+<header>
+  <nav class="container-fluid" role="navigation">
+    <div class="container">
+      <a class="navbar-text navbar-left logo" href="#/"><img src="img/logo.png" alt="Novisa"/></a>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="pull-right">
+          <p class="inline-block">Napisz do nas: <a href="#/">sprzedaz@novisa.pl</a></p>
+          <p class="inline-block">Zadzwoń <a href="#/">+48 (22) 545 70 20</a></p>
+          <a class="inline-block social-media" href="#/"><img src="img/facebook.png" alt="facebook"/></a>
+          <a class="inline-block social-media" href="#/"><img src="img/youtube.png" alt="youtube"/></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-link"><a href="#/">O nas</a></li>
+            <li class="navbar-link"><a href="#oferta">Oferta</a></li>
+            <li class="navbar-link"><a href="#/">Wyszukaj mieszkanie</a></li>
+            <li class="navbar-link"><a href="#/">Doradztwo kredytowe</a></li>
+            <li class="navbar-link"><a href="#/">MdM</a></li>
+            <li class="navbar-link"><a href="#/">Kontakt</a></li>
+        </ul>
+    </div>
+    </div>
+  </nav>
+  <div class="container">
+    <article class="header_article">
+        <h2>Spokojny dom</h2>
+        <p>w otulinie Warszawy</p>
+        <small>Twoje wymarzone miejsce - eleganckie domy tuż pod lasem i tylko 15 minut od centrum!</small>
+        <button>Zarezerwuj ostatnie wolne miejsca!</button>
+    </article>
+    <section class="inline-block">
+      <article class="inline-block active">
+        <p><strong>Ostatnie wolne mieszkania</strong><br/> na osiedlu Ogrody Przyjaciół II</p>
+      </article>
+      <article class="inline-block">
+        <p><strong>Poznaj nasze nowe osiedle</strong><br/> na Woli i skorzystaj z MdM</p>
+      </article>
+      <article class="inline-block">
+        <p><strong>Skorzystaj z doradztwa</strong><br/> kredytowego, sprawdź ofertę</p>
+      </article>
+      <article class="inline-block">
+        <p><strong>Za ile urządzisz mieszkanie?</strong><br/> Skorzystaj z kalkulatora</p>
+      </article>
+    </section>
+  </div>
+</header>
+<section>
+    <div class="box container" style="padding-bottom: 0;">
+      <h3>Twój nowy dom</h3>
+      <p class="small2">Skorzystaj z wyszukiwarki a błyskawicznie znajdziesz nowe mieszkanie w Warszawie idealnie dopasowane do Twoich potrzeb.</p>
+      <br/>
+      <div class="search-home-input-group">
+        <div class="inline-block search-home-input">
+          <div class="form-group">
+            <label for="lokalizacja">Lokalizacja</label>
+            <select id="lokalizacja" class="selectpicker form-control" data-live-search="true" title="wszystkie inwestycje">
+              <option>lokalizacja 1</option>
+              <option>lokalizacja 2</option>
+              <option>lokalizacja 3</option>
+              <option>lokalizacja 4</option>
+              <option>lokalizacja 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block search-home-input">
+          <div class="form-group">
+            <label for="metraz">Metraż</label>
+            <select id="metraz" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+              <option>powierzchnia 1</option>
+              <option>powierzchnia 2</option>
+              <option>powierzchnia 3</option>
+              <option>powierzchnia 4</option>
+              <option>powierzchnia 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block search-home-input">
+          <div class="form-group">
+            <label for="cena">Cena</label>
+            <select id="cena" class="selectpicker form-control" data-live-search="true" title="powierzchnia w m2">
+              <option>cena 1</option>
+              <option>cena 2</option>
+              <option>cena 3</option>
+              <option>cena 4</option>
+              <option>cena 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block search-home-input">
+          <div class="form-group">
+            <label for="pokoje">Liczba pokoi</label>
+            <select id="pokoje" class="selectpicker form-control" data-live-search="true" title="3">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-block">
+          <button type="button" class="btn search-home-button">Znajdź</button>
+        </div>
+      </div>
+    </div>
+    <hr/>
+
+    <div class="container box table-responsive">
+      <table class="table text-center" ng-init="hauses">
+        <thead>
+          <tr>
+            <th>Nr</th>
+            <th>Piętro</th>
+            <th>Pokoje</th>
+            <th>Powierzchnia</th>
+            <th>Loggia/balkon/taras</th>
+            <th>Ogród</th>
+            <th>Zapytaj o ofertę</th>
+            <th>Pobierz</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="hause in hauses">
+            <td>{{hause.nr}}</td>
+            <td>{{hause.pietro}}</td>
+            <td>{{hause.pokoje}}</td>
+            <td>{{hause.powierzchnia}}</td>
+            <td>{{hause.loggia_balkon_taras}}</td>
+            <td>{{hause.ogrod}}</td>
+            <td><a class="btn table-button" href="{{hause.zapytaj}}" role="button">Zapytaj o ofertę</a></td>
+            <td><a class="scheme" href="{{hause.pobierz}}">Schemat</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
+      <p class="small2 pull-left">Znaleziono 16 ofert</p>
+      <a href="#/" class="small2 pull-right">następna strona <span class="glyphicon glyphicon-menu-right" style="font-size: 10px;"></span></a>
+    </div>
+</section>
+<section class="section-img">
+  <div class="container">
+    <article class="section_article">
+        <h2>Gotowe do zamieszkania</h2>
+        <small>Przekonaj się że wykończenie mieszkania wcale nie musi być drogie i czasochłonne. Skorzystaj z naszej oferty wykończenia pod klucz.</small>
+        <button>Sprawdź teraz</button>
+    </article>
+  </div>
+</section>
+<section class="container box text-center">
+  <h2>Nasze realizacje</h2>
+  <p class="small2">Kliknij w najciekawszą dla Ciebie inwestycję i zobacz co przygotowaliśmy. W naszej ofercie znajdziesz zarówno wygodne apartamenty w Warszawie, mieszkania w systemie MdM oraz nowe domy pod Warszawą. Sprawdź szczegóły oferty, a jeśli zostawisz nam swój adres email lub numer telefonu oddzwonimy do Ciebie w indywidualną propozycją.</p>
+</section>
+<section class="container box">
+  <div class="row">
+    <article class="col-sm-4 col-md-4">
+      <img class="thumbnail-img img-responsive" src="img/wola.jpg" alt="Novisa Garden - Nowa Wola">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>Novisa Garden - Nowa Wola</h3>
+          <p>Szukasz mieszkania, w którym poczujesz standard domu jednorodzinnego? Chciałbyś otrzymać w pakiecie dwa miejsca postojowe, salon z kominkiem i ogród? Jeśli tak, to zapraszamy do zapoznania się z ofertą Novisa Garden.</p>
+        </div>
+        <p class="thumbnail-btn"><a href="#/" class="btn" role="button">Button</a></p>
+      </div>
+    </article>
+    <article class="col-sm-4 col-md-4">
+      <img class="thumbnail-img img-responsive" src="img/piaseczno.jpg" alt="Owocowy Sad - Piaseczno">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>Owocowy Sad - Piaseczno</h3>
+          <p>Własny dom w sąsiedztwie Lasu Kabackiego? Teraz to możliwe. Owocowy Sad 2 to inwestycja, w której oferujemy domy w niezwykle konkurencyjnej cenie już od 379.000 złotych!</p>
+        </div>
+        <p class="thumbnail-btn"><a href="#/" class="btn" role="button">Button</a></p>
+      </div>
+    </article>
+    <article class="col-sm-4 col-md-4">
+      <img class="thumbnail-img img-responsive" src="img/bialoleka.jpg" alt="Ogrody Przyjaciół - Białołęka">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>Ogrody Przyjaciół - Białołęka</h3>
+          <p>Ogrody Przyjaciół to kameralne, ogrodzone osiedle na Zielonej Białołęce objęte programem MDM. Zdecydowanie najlepsza  w Warszawie oferta dla osób, które za cenę średniej wielkości mieszkania pragną zamieszkać we własnym domku z ogrodem i kominkiem.</p>
+        </div>
+        <p class="thumbnail-btn"><a href="#/" class="btn" role="button">Button</a></p>
+      </div>
+    </article>
+  </div>
+  <a href="#/" class="btn grey-btn" role="button">Zobacz więcej</a>
+</section>
+<script>
+  $(document).ready(function(){
+    var header_height = window.innerHeight;
+    var header_width = window.innerWidth;
+    if(header_width > 767){
+      //header height
+      $('header').css({'height':header_height});
+      //.header_article vertically center in the header
+      $('.header_article').css({'margin-top':(header_height/2 - $('.header_article').height())});
+    }
+
+    $('.selectpicker').selectpicker({
+      style: 'btn-default'
+    });
+  });
+</script>
