@@ -1,8 +1,44 @@
 // out: styles.css, sourcemap: true, compress: true
 
 @color1: #00AAF2;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face{
+    font-family:"Neo Sans W01 Light734947";
+    src:url("Fonts/681fbcbc-1907-441a-893a-fc00ecea0267.eot?#iefix");
+    src:url("Fonts/681fbcbc-1907-441a-893a-fc00ecea0267.eot?#iefix") format("eot"),url("Fonts/e0bd859d-12b1-41c1-9b67-003688d01609.woff2") format("woff2"),url("Fonts/a21a792c-051c-4059-8719-ecc8749c99a6.woff") format("woff"),url("Fonts/feee8e94-28a0-416a-88d3-db3912effbc4.ttf") format("truetype"),url("Fonts/be444bf4-2ebe-416a-baa3-b19910fb06ba.svg#be444bf4-2ebe-416a-baa3-b19910fb06ba") format("svg");
+}
+@font-face{
+    font-family:"Neo Sans W01";
+    src:url("Fonts/2959d89a-a257-4ce7-9cda-63e00f275369.eot?#iefix");
+    src:url("Fonts/2959d89a-a257-4ce7-9cda-63e00f275369.eot?#iefix") format("eot"),url("Fonts/a53085dd-4493-4430-8349-fd63d6f3e5bc.woff2") format("woff2"),url("Fonts/a32c3a17-3242-461c-a048-ca8e775582b1.woff") format("woff"),url("Fonts/97316a7d-9db1-4dc1-bd87-e24103d88a81.ttf") format("truetype"),url("Fonts/1287ca7a-3ce7-40b7-9612-061d4c793f04.svg#1287ca7a-3ce7-40b7-9612-061d4c793f04") format("svg");
+}
+@font-face{
+    font-family:"Neo Sans W01 Italic";
+    src:url("Fonts/f4875de8-7883-4489-958a-e2479fe77d29.eot?#iefix");
+    src:url("Fonts/f4875de8-7883-4489-958a-e2479fe77d29.eot?#iefix") format("eot"),url("Fonts/9ff15e66-152b-4d48-a338-ab8c95431ca7.woff2") format("woff2"),url("Fonts/740562f3-2434-4080-8b87-ac8084c724d4.woff") format("woff"),url("Fonts/cd590b5e-4e72-4828-955d-a84944bb3eda.ttf") format("truetype"),url("Fonts/fabf21ce-e10a-4847-bd79-116d2e06352d.svg#fabf21ce-e10a-4847-bd79-116d2e06352d") format("svg");
+}
+@font-face{
+    font-family:"Neo Sans W01 Medium";
+    src:url("Fonts/85c8556d-8a76-4037-a2e2-0f5fd9dabc03.eot?#iefix");
+    src:url("Fonts/85c8556d-8a76-4037-a2e2-0f5fd9dabc03.eot?#iefix") format("eot"),url("Fonts/f056e9e7-3bb5-4f21-b861-ed2a47a0700b.woff2") format("woff2"),url("Fonts/b0eddbbb-9e8e-4e08-bde1-965bb945f73a.woff") format("woff"),url("Fonts/b2931674-c992-42a0-aa22-e9cb15d3383d.ttf") format("truetype"),url("Fonts/af9d27b2-3ca0-47ca-8d5d-4c4665df6305.svg#af9d27b2-3ca0-47ca-8d5d-4c4665df6305") format("svg");
+}
+@font-face{
+    font-family:"Neo Sans W01 Bold";
+    src:url("Fonts/a0b14394-4dd9-4421-98cf-dfe2f8dc6251.eot?#iefix");
+    src:url("Fonts/a0b14394-4dd9-4421-98cf-dfe2f8dc6251.eot?#iefix") format("eot"),url("Fonts/82a34ab2-92d9-48c4-989d-50d5bd54fdd1.woff2") format("woff2"),url("Fonts/ecedcc38-3aec-48a5-a693-fbfac59dd0ed.woff") format("woff"),url("Fonts/2974017c-634d-4238-9381-e3f0b95a150c.ttf") format("truetype"),url("Fonts/0b4cc213-f9e9-4cb1-aa3c-64e91a1328dc.svg#0b4cc213-f9e9-4cb1-aa3c-64e91a1328dc") format("svg");
+}
+@font-face{
+    font-family:"Neo Sans W01 Black";
+    src:url("Fonts/a18848f0-fc35-4303-b859-765085dc8136.eot?#iefix");
+    src:url("Fonts/a18848f0-fc35-4303-b859-765085dc8136.eot?#iefix") format("eot"),url("Fonts/35cfb856-b935-45e7-b54f-b60e4b23e03c.woff2") format("woff2"),url("Fonts/424ba691-179e-4d47-8ab9-e7eedc23c30f.woff") format("woff"),url("Fonts/fc12c0b1-38e2-4dba-acfd-e2c26fd997a4.ttf") format("truetype"),url("Fonts/30ec1a46-ee1b-4ded-a51c-5c4db7940e1b.svg#30ec1a46-ee1b-4ded-a51c-5c4db7940e1b") format("svg");
+}
+@font-face{
+    font-family:"Neo Sans W01 Ultra";
+    src:url("Fonts/8eb84852-0d1d-43d6-a0a6-64ed9502ec21.eot?#iefix");
+    src:url("Fonts/8eb84852-0d1d-43d6-a0a6-64ed9502ec21.eot?#iefix") format("eot"),url("Fonts/8f84321b-1090-42f8-b736-7e2acc5cadd7.woff2") format("woff2"),url("Fonts/86026cd0-7a50-4f22-8c86-054b620a6398.woff") format("woff"),url("Fonts/2f771521-0964-4226-9bb2-eadbd11eecd0.ttf") format("truetype"),url("Fonts/364edb7f-b735-435e-8ae5-6bcfc04f6f41.svg#364edb7f-b735-435e-8ae5-6bcfc04f6f41") format("svg");
+}
 body{
-  font-family: "Neo Sans Pro";
+  font-family:'Neo Sans W01' !important;
 }
 header{
   background: url(../img/photo_02.jpg) no-repeat center center;
@@ -81,6 +117,7 @@ header{
       small{
           color: #808080;
           font-size:18px;
+          line-height: 24px;
       }
       button{
           background-color:@color1;
@@ -118,7 +155,7 @@ header{
 .contact{
    position:fixed;
    top:50%;
-   right: -260px;
+   right: -255px;
    background-color:#fff;
    z-index: 1000;
    /* Safari */
@@ -132,9 +169,11 @@ header{
    h3{
        background-color: rgba(251,50,16,1);
        color:#fff;
-       padding:10px 20px;
+       padding:10px 40px;
        margin: 0;
        cursor: pointer;
+       font-size: 20px;
+       font-weight: bold;
    }
    .contact_form{
         padding:20px;
@@ -184,14 +223,14 @@ header{
   padding: 50px 0;
   .section_article {
       background-color: #fff;
-      max-width: 382px;
+      max-width: 410px;
       padding:30px;
       h2{
           margin: 0 0 10px 0;
-          font-size: 48px;
+          font-size: 32px;
       }
       p{
-          font-size:30px;
+          font-size:18px;
           margin:0 0 5px 0;
       }
       small{
@@ -215,6 +254,7 @@ header{
   }
 }
 .table {
+  font-family: 'Open Sans', sans-serif;
   th{
     text-align: center;
   }
@@ -272,7 +312,13 @@ header{
     color: @color1;
   }
   .caption{
-    min-height: 250px;
+    min-height: 300px;
+    line-height: 24px;
+    padding: 26px !important;
+    p{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+    }
   }
   .thumbnail-btn{
     padding: 0 40px;
@@ -301,8 +347,9 @@ hr{
 }
 .small2{
   color: #999999;
-  font-family: "Open Sans";
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  line-height: 26px;
 }
 body > section.container.box.text-center > p{
   padding: 0 100px;
@@ -329,7 +376,7 @@ body > section.container.box.text-center > p{
   color:#fff;
   .container{
     div{
-        margin: 30px 0;
+        margin: 20px 0;
         p{
           font-size: 16px;
         }
@@ -359,6 +406,7 @@ footer{
   }
   .footer-contact{
     color: @color1;
+    font-size: 13px;
     &:hover{
       color: @color1/2;
       -webkit-transition: color, 0.6s;
@@ -376,8 +424,12 @@ footer{
     li{
       list-style-type: none;
       padding: 5px 0;
+      p{
+        font-family: 'Open Sans', sans-serif;
+      }
       a{
         color: #333;
+        font-family: 'Open Sans', sans-serif;
       }
     }
   }
@@ -393,12 +445,13 @@ footer{
   .footer-bottom{
     border-top: 1px solid #F2F2F2;
     padding-top: 20px;
-    padding-bottom: 20px;
     float: left;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     p{
         a{
-            margin: 0 3px;
+            margin: 0 2px;
         }
     }
   }
@@ -434,7 +487,7 @@ footer{
     margin-right: 10px;
   }
   .thumbnail .caption{
-    min-height: 330px;
+    min-height: 510px;
   }
 }
 @media all and (min-width: 767px){
@@ -467,10 +520,10 @@ footer{
   .header_article, .section_article{
     padding: 0;
     h2{
-      font-size: 40px !important;
+      font-size: 42px !important;
     }
     p{
-      font-size: 25px !important;
+      font-size: 30px !important;
     }
   }
   header {
@@ -484,9 +537,9 @@ footer{
       text-align: center;
       padding: 10px !important;
       .social-media{
-        width: 49%;
+        width: 100%;
         text-align: center;
-        margin: 10px 0 0 0;
+        margin: 10px 0;
         margin-right: 0 !important;
       }
       .navbar-collapse div{
@@ -504,7 +557,7 @@ footer{
     }
   }
   .search-home-button{
-    margin-top:10px;
+    margin-top:8px;
   }
   .contact{
     display: none;

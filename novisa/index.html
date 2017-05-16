@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Paweł Milewski">
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="css/styles.css?v=3.0.0">
-    <link rel="stylesheet" href="css/offer.css?v=1.2.2">
+    <link rel="stylesheet" href="css/styles.css?v=3.2.0">
+    <link rel="stylesheet" href="css/offer.css?v=1.2.7">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
@@ -124,7 +124,7 @@
         contact_show = 1;
 
       }else{
-        $('.contact').animate({right: '-260px'}, 'slow');
+        $('.contact').animate({right: '-255px'}, 'slow');
         contact_show = 0;
       }
     });
@@ -138,10 +138,10 @@
     app.config(function($routeProvider) {
       $routeProvider
       .when("/", {
-          templateUrl : "pages/main.htm?v=1.4.0"
+          templateUrl : "pages/main.htm?v=1.4.1"
       })
       .when("/oferta", {
-          templateUrl : "pages/offer.htm?v=1.1.7"
+          templateUrl : "pages/offer.htm?v=1.1.8"
       });
     });
   </script>
