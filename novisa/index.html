@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>Novisa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css?v=2.9.0">
-    <link rel="stylesheet" href="css/offer.css?v=1.1.5">
+    <meta name="author" content="Paweł Milewski">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css?v=2.9.4">
+    <link rel="stylesheet" href="css/offer.css?v=1.1.8">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
@@ -79,6 +81,12 @@
                  lub skorzystaj z naszego <br/>
                  <a class="footer-contact" href="#/">formularza kontaktowego</a></p></li>
           </ul>
+          <div class="footer-social">
+            <div class="inline-block"><a href="#/"><img class="img-responsive" src="img/facebook_circle.png" alt=""/></a></div>
+            <div class="inline-block"><a href="#/"><img class="img-responsive" src="img/google+_circle.png" alt=""/></a></div>
+            <div class="inline-block"><a href="#/"><img class="img-responsive" src="img/linkedin_circle.png" alt=""/></a></div>
+            <div class="inline-block"><a href="#/"><img class="img-responsive" src="img/twitter_circle.png" alt=""/></a></div>
+          </div>
         </div>
         <div style="clear:both;"></div>
         <div class="footer-bottom">
@@ -89,52 +97,53 @@
       </div>
 
     </footer>
-  <script src="data.js?v=1.1.1"></script>
+  <script src="data.js?v=1.1.2"></script>
   <script>
-$(document).ready(function(){
-  var header_height = window.innerHeight;
-  var header_width = window.innerWidth;
-    // fixed navbar
-    $(window).bind('scroll', function(){
-      if($(this).scrollTop() > $('nav').height()) {
-        $('nav').addClass('navbar-fixed-top');
-        if(header_width <= 1200){
-          $('.logo').css({'margin': '5px 0'});
-        }
-     }else if($(this).scrollTop() < 20){
-       if($('nav').hasClass('navbar-fixed-top')){
-         $('nav').removeClass('navbar-fixed-top');
+  $(document).ready(function(){
+    var header_height = window.innerHeight;
+    var header_width = window.innerWidth;
+      // fixed navbar
+      $(window).bind('scroll', function(){
+        if($(this).scrollTop() > $('nav').height()) {
+          $('nav').addClass('navbar-fixed-top');
+          if(header_width <= 1200){
+            $('.logo').css({'margin': '5px 0'});
+          }
+       }else if($(this).scrollTop() < 20){
+         if($('nav').hasClass('navbar-fixed-top')){
+           $('nav').removeClass('navbar-fixed-top');
+         }
+         $('.logo').css({'margin': '15px 15px 15px 0'});
        }
-       $('.logo').css({'margin': '15px 15px 15px 0'});
-     }
-  });
-  // show contact
-  var contact_show = 0;
-  $('.contact h3').click(function(){
-    if(contact_show == 0){
-      $('.contact').animate({right: '30px'}, 'slow');
-      contact_show = 1;
+    });
+    // show contact
+    var contact_show = 0;
+    $('.contact h3').click(function(){
+      if(contact_show == 0){
+        $('.contact').animate({right: '30px'}, 'slow');
+        contact_show = 1;
 
-    }else{
-      $('.contact').animate({right: '-260px'}, 'slow');
-      contact_show = 0;
-    }
-  });
-});
-
-  var app = angular.module("myApp", ["ngRoute"]);
-  app.controller('myCtrl', function($scope) {
-    $scope.hauses = data.hauses;
-  });
-  app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "pages/main.htm?v=1.3.8"
-    })
-    .when("/oferta", {
-        templateUrl : "pages/offer.htm?v=1.1.0"
+      }else{
+        $('.contact').animate({right: '-260px'}, 'slow');
+        contact_show = 0;
+      }
     });
   });
+  //Angular
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.controller('myCtrl', function($scope) {
+      // table data
+      $scope.hauses = data.hauses;
+    });
+    app.config(function($routeProvider) {
+      $routeProvider
+      .when("/", {
+          templateUrl : "pages/main.htm?v=1.3.9"
+      })
+      .when("/oferta", {
+          templateUrl : "pages/offer.htm?v=1.1.5"
+      });
+    });
   </script>
   </body>
 </html>

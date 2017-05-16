@@ -69,9 +69,25 @@
         box-shadow: #ccc 0px 0px 10px;
         .article-img{
             padding:0;
-             img {
-               margin: auto;
-             }
+        }
+        h3{
+          color: @color1;
+        }
+        .details{
+          margin: 20px 0;
+          font-weight: bold;
+        }
+        ul{
+          list-style: none;
+          padding: 0;
+          li{
+            &:before{
+              content: "• ";
+              color: @color1;
+              font-size: 24px;
+              vertical-align: middle;
+            }
+          }
         }
     }
   }
@@ -118,5 +134,11 @@
         width: 50% !important;
       }
     }
+  }
+  .article-img{
+      padding:0;
+       img {
+         margin: auto;
+       }
   }
 }

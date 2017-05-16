@@ -268,6 +268,9 @@ header{
 .thumbnail{
   border-top: 0 !important;
   box-shadow: #ccc 0px 0px 10px;
+  h3{
+    color: @color1;
+  }
   .caption{
     min-height: 250px;
   }
@@ -373,6 +376,9 @@ footer{
     li{
       list-style-type: none;
       padding: 5px 0;
+      a{
+        color: #333;
+      }
     }
   }
   a{
@@ -391,6 +397,11 @@ footer{
     float: left;
     width: 100%;
   }
+  .footer-social{
+    img{
+        max-width:35px;
+    }
+}
 }
 @media all and (min-width: 1400px){
   header section {
@@ -499,6 +510,11 @@ footer{
   }
   .grey-btn{
     width: 100% !important;
+  }
+  .section-contact{
+    h3{
+      font-size: 20px;
+    }
   }
   footer{
     .footer-logo{
