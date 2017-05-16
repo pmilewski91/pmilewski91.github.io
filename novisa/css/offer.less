@@ -77,6 +77,19 @@
           margin: 20px 0;
           font-weight: bold;
         }
+        .btn{
+          background-color: #00AAF2;
+          color: #fff;
+          border-radius: 0;
+          font-weight: bold;
+          padding: 10px;
+          margin-top: 10px;
+          &:hover{
+            background-color: @color1/2;
+            -webkit-transition: background-color, 0.6s;
+            transition: background-color, 0.6s;
+          }
+        }
         ul{
           list-style: none;
           padding: 0;
@@ -140,5 +153,11 @@
        img {
          margin: auto;
        }
+  }
+  article{
+    .btn{
+      display: block;
+      margin: auto;
+    }
   }
 }
