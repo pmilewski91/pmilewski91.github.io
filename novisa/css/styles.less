@@ -43,6 +43,12 @@ body{
 .nav-fixed-hidden{
   display: none;
 }
+.white_logo{
+  display: block;
+}
+.black_logo{
+  display: none;
+}
 header{
   background: url(../img/photo_02.jpg) no-repeat center center;
   background-size: cover;
@@ -596,6 +602,12 @@ footer{
   }
 }
 @media all and (max-width: 767px){
+  .white_logo{
+    display: none !important;
+  }
+  .black_logo{
+    display: block !important;
+  }
   #bs-example-navbar-collapse-1 > div{
     margin-top: 10px;
   }
@@ -629,6 +641,8 @@ footer{
     nav{
       text-align: center;
       padding: 10px !important;
+      background: #ffffff !important;
+      color: #01212f !important;
       .logo{
         img{
           padding-left: 10px;
@@ -636,7 +650,10 @@ footer{
       }
       .navbar-link a{
         padding: 15px;
-
+        color: #01212f !important;
+        &:hover{
+          color: @color1;
+        }
       }
       .container{
         display: block;

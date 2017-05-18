@@ -2,7 +2,10 @@
   <div class="gradient-img">
     <nav class="container-fluid navbar-fixed-top" role="navigation">
       <div class="container">
-        <a class="navbar-text navbar-left logo" href="#/"><img src="img/logo.png" alt="Novisa"/></a>
+        <a class="navbar-text navbar-left logo" href="#/">
+          <img class="white_logo" src="img/logo.png" alt="Novisa"/>
+          <img class="black_logo" src="img/logo-black.png" alt="Novisa"/>
+        </a>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
@@ -200,6 +203,7 @@
   $(document).ready(function(){
     var header_height = window.innerHeight;
     var header_width = window.innerWidth;
+
     if(header_width > 767){
       //header height
       $('header').css({'height':header_height});
@@ -218,5 +222,7 @@
       $('header section article').removeClass('active');
       $(this).addClass('active');
     });
+
+
   });
 </script>

@@ -179,10 +179,15 @@
   #bs-example-navbar-collapse-1 > div{
     margin-top: 10px;
   }
-  .offer-content .nav-box nav{
-    background: #ffffff !important;
-    text-align: center;
-    padding: 10px !important;
+  .offer-content .nav-box {
+    background: url(../img/photo_01.jpg) no-repeat top center !important;
+    background-size: cover !important;
+    height: 71px;
+    nav{
+      text-align: center;
+      padding: 10px !important;
+      background: #ffffff !important;
+      color: #01212f !important;
     .logo{
       img{
         padding-left: 10px;
@@ -193,6 +198,10 @@
     }
     .navbar-link a{
       padding: 15px;
+      color: #01212f !important;
+      &:hover{
+        color: @color1;
+      }
     }
     .social-media{
       width: 49%;
@@ -218,6 +227,10 @@
       }
     }
   }
+  .navbar-fixed-top_style{
+    background: #ffffff !important;
+  }
+    }
   .article-img{
       padding:0;
        img {
