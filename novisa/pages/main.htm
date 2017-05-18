@@ -1,55 +1,58 @@
 <header>
-  <nav class="container-fluid" role="navigation">
+  <div class="gradient-img">
+    <nav class="container-fluid navbar-fixed-top" role="navigation">
+      <div class="container">
+        <a class="navbar-text navbar-left logo" href="#/"><img src="img/logo.png" alt="Novisa"/></a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+      </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="pull-right">
+            <p class="inline-block">Napisz do nas: <a href="#/">sprzedaz@novisa.pl</a></p>
+            <p class="inline-block">Zadzwoń <a href="#/">+48 (22) 545 70 20</a></p>
+            <a class="inline-block social-media" href="#/"><img src="img/facebook.png" alt="facebook"/></a>
+            <a class="inline-block social-media" href="#/"><img src="img/youtube.png" alt="youtube"/></a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+              <li class="navbar-link"><a href="#/">O nas</a></li>
+              <li class="navbar-link"><a href="#oferta">Oferta</a></li>
+              <li class="navbar-link"><a href="#/">Wyszukaj mieszkanie</a></li>
+              <li class="navbar-link"><a href="#/">Doradztwo kredytowe</a></li>
+              <li class="navbar-link"><a href="#/">MdM</a></li>
+              <li class="navbar-link"><a href="#/">Kontakt</a></li>
+          </ul>
+      </div>
+      </div>
+    </nav>
     <div class="container">
-      <a class="navbar-text navbar-left logo" href="#/"><img src="img/logo.png" alt="Novisa"/></a>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+      <article class="header_article">
+          <h2>Spokojny dom</h2>
+          <p>w otulinie Warszawy</p>
+          <small>Twoje wymarzone miejsce - eleganckie domy tuż pod lasem i tylko 15 minut od centrum!</small>
+          <button>Zarezerwuj ostatnie wolne miejsca!</button>
+      </article>
+      <section class="inline-block">
+        <article class="inline-block slider active">
+          <p><strong>Ostatnie wolne mieszkania</strong><br/> na osiedlu Ogrody Przyjaciół II</p>
+        </article>
+        <article class="inline-block slider">
+          <p><strong>Poznaj nasze nowe osiedle</strong><br/> na Woli i skorzystaj z MdM</p>
+        </article>
+        <article class="inline-block slider">
+          <p><strong>Skorzystaj z doradztwa</strong><br/> kredytowego, sprawdź ofertę</p>
+        </article>
+        <article class="inline-block slider">
+          <p><strong>Za ile urządzisz mieszkanie?</strong><br/> Skorzystaj z kalkulatora</p>
+        </article>
+      </section>
     </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <div class="pull-right">
-          <p class="inline-block">Napisz do nas: <a href="#/">sprzedaz@novisa.pl</a></p>
-          <p class="inline-block">Zadzwoń <a href="#/">+48 (22) 545 70 20</a></p>
-          <a class="inline-block social-media" href="#/"><img src="img/facebook.png" alt="facebook"/></a>
-          <a class="inline-block social-media" href="#/"><img src="img/youtube.png" alt="youtube"/></a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li class="navbar-link"><a href="#/">O nas</a></li>
-            <li class="navbar-link"><a href="#oferta">Oferta</a></li>
-            <li class="navbar-link"><a href="#/">Wyszukaj mieszkanie</a></li>
-            <li class="navbar-link"><a href="#/">Doradztwo kredytowe</a></li>
-            <li class="navbar-link"><a href="#/">MdM</a></li>
-            <li class="navbar-link"><a href="#/">Kontakt</a></li>
-        </ul>
-    </div>
-    </div>
-  </nav>
-  <div class="container">
-    <article class="header_article">
-        <h2>Spokojny dom</h2>
-        <p>w otulinie Warszawy</p>
-        <small>Twoje wymarzone miejsce - eleganckie domy tuż pod lasem i tylko 15 minut od centrum!</small>
-        <button>Zarezerwuj ostatnie wolne miejsca!</button>
-    </article>
-    <section class="inline-block">
-      <article class="inline-block active">
-        <p><strong>Ostatnie wolne mieszkania</strong><br/> na osiedlu Ogrody Przyjaciół II</p>
-      </article>
-      <article class="inline-block">
-        <p><strong>Poznaj nasze nowe osiedle</strong><br/> na Woli i skorzystaj z MdM</p>
-      </article>
-      <article class="inline-block">
-        <p><strong>Skorzystaj z doradztwa</strong><br/> kredytowego, sprawdź ofertę</p>
-      </article>
-      <article class="inline-block">
-        <p><strong>Za ile urządzisz mieszkanie?</strong><br/> Skorzystaj z kalkulatora</p>
-      </article>
-    </section>
   </div>
+
 </header>
 <section>
     <div class="box container" style="padding-bottom: 0;">
@@ -149,7 +152,7 @@
   <div class="container">
     <article class="section_article">
         <h2>Gotowe do zamieszkania</h2>
-        <small>Przekonaj się że wykończenie mieszkania wcale nie musi być drogie i czasochłonne. Skorzystaj z naszej oferty wykończenia pod klucz.</small>
+        <small>Przekonaj się że wykończenie mieszkania wcale nie musi być drogie i czasochłonne. Skorzystaj z naszej oferty wykończenia pod klucz.</small><br/>
         <button>Sprawdź teraz</button>
     </article>
   </div>
@@ -201,11 +204,19 @@
       //header height
       $('header').css({'height':header_height});
       //.header_article vertically center in the header
-      $('.header_article').css({'margin-top':(header_height/2 - $('.header_article').height())});
+      $('.header_article').css({'margin-top':((header_height/2 - $('.header_article').height()))+$('nav').height()});
     }
 
     $('.selectpicker').selectpicker({
       style: 'btn-default'
+    });
+
+    //Slider
+
+    $('.slider').click(function(){
+      console.log('sdf');
+      $('header section article').removeClass('active');
+      $(this).addClass('active');
     });
   });
 </script>

@@ -2,17 +2,29 @@
 @color1: #00AAF2;
 .offer-content {
   .nav-box{
-    background: url(../img/photo_01.jpg) no-repeat top center;
-    background-size: cover;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.66) 34%, rgba(0,0,0,0.53) 47%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    -webkit-transition: 0.4s all; /* Safari */
+    transition: 0.4s all;
+    height: 128px;
     nav {
-      color: #FFFFFF;
-      padding: 20px 0;
+      color: #ffffff;
+      padding: 0;
       border-top: 1px solid rgba(255,255,255,0.1);
-      background: -moz-linear-gradient(top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.66) 34%, rgba(0,0,0,0.53) 47%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-      p a{
+      background: url(../img/photo_01.jpg) no-repeat top center;
+      background-size: cover;
+      -webkit-transition: 0.4s all; /* Safari */
+      transition: 0.4s all;
+      .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      p {
+        margin: 0 0 15px !important;
+        a{
         color:@color1;
         font-weight: bold;
         margin-right: 26px;
@@ -23,8 +35,10 @@
           text-decoration: none;
         }
       }
+      }
+
       .logo{
-        margin-left: 0;
+        margin: 0 !important;
       }
       div > div > a:nth-last-child(2){
         margin-right: 10px;
@@ -33,6 +47,8 @@
         a{
           color: #FFFFFF;
           font-size: 18px;
+          padding: 0px 15px 0 15px;
+
           &:hover, &:focus{
             background-color:transparent !important;
             color: @color1;
@@ -48,8 +64,7 @@
       .navbar-header{
         button{
           background-color: rgb(0, 145, 228);
-          float: none;
-          width:100%;
+          max-width: 48px;
           cursor: pointer;
         }
         .icon-bar{
@@ -115,18 +130,50 @@
 .navbar-toggle .icon-bar+.icon-bar{
   margin-top: 4px !important;
 }
-.navbar-fixed-top {
+.navbar-fixed-top_style {
     padding: 5px 0 !important;
-    background: #01212f !important;
+    background: #ffffff !important;
+    -webkit-transition: 0.4s all; /* Safari */
+    transition: 0.4s all;
+    color: #01212f! important;
+    box-shadow: #ccc 0 1px 10px;
+    -webkit-transition: 0.4s all; /* Safari */
+    transition: 0.4s all;
+    .container{
+      padding: 0 !important;
+    }
+    .navbar-link{
+      a{
+        color: #01212f !important;
+        &:hover{
+          color: @color1 !important;
+          -webkit-transition: color 0.6s; /* Safari */
+          transition: color 0.6s;
+        }
+      }
+    }
+}
+.navbar-collapse {
+  padding: 0px !important;
 }
 @media all and (max-width: 1200px) and (min-width: 768px){
   .offer-content .nav-box nav .navbar-link a{
     font-size: 14px;
     padding: 5px;
+    padding: 0px 10px 0 10px;
   }
   .offer-content .nav-box nav p a{
     margin-right: 10px;
   }
+}
+@media all and (min-height: 767px){
+  nav{
+    max-height: 128px;
+    .container{
+      padding: 36px 0;
+    }
+  }
+
 }
 @media all and (max-width: 767px){
   #bs-example-navbar-collapse-1 > div{
@@ -136,14 +183,30 @@
     background: #01212f !important;
     text-align: center;
     padding: 10px !important;
+    .logo{
+      img{
+        padding-left: 10px;
+      }
+    }
+    .container{
+      display: block;
+    }
+    .navbar-link a{
+      padding: 15px;
+    }
     .social-media{
       width: 49%;
       text-align: center;
       margin: 10px 0 0 0;
       margin-right: 0 !important;
     }
-    .navbar-collapse div{
-      float:none !important;
+    .navbar-collapse {
+      margin-top: 10px;
+      margin-right: 0px !important;
+      margin-left: 0px !important;
+      div{
+        float:none !important;
+      }
     }
     .navbar-header{
       display: table-cell;
@@ -151,7 +214,7 @@
       padding-left: 15px;
       vertical-align: middle;
       button{
-        width: 50% !important;
+        width: 48px;
       }
     }
   }

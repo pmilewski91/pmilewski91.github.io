@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Paweł Milewski">
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="css/styles.css?v=3.2.6">
-    <link rel="stylesheet" href="css/offer.css?v=1.2.9">
+    <link rel="stylesheet" href="css/styles.css?v=3.9.4">
+    <link rel="stylesheet" href="css/offer.css?v=1.6.0">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap-select.css">
@@ -24,7 +24,6 @@
 
           <input type="text" class="form-control" placeholder="Imię i nazwisko">
           <input type="text" class="form-control" placeholder="Adres e-mail">
-          <input type="text" class="form-control" placeholder="Numer telefonu">
           <textarea class="form-control" rows="3"></textarea>
           <button type="submit" class="btn btn-default">Wyślij</button>
 
@@ -104,14 +103,16 @@
     var header_width = window.innerWidth;
       // fixed navbar
       $(window).bind('scroll', function(){
-        if($(this).scrollTop() > $('nav').height()) {
-          $('nav').addClass('navbar-fixed-top');
+        if($(this).scrollTop() > 20) {
+          $('nav').addClass('navbar-fixed-top_style');
+          $('.logo img').attr('src', 'img/logo-black.png');
           if(header_width <= 1200){
             $('.logo').css({'margin': '5px 0'});
           }
        }else if($(this).scrollTop() < 20){
          if($('nav').hasClass('navbar-fixed-top')){
-           $('nav').removeClass('navbar-fixed-top');
+           $('nav').removeClass('navbar-fixed-top_style');
+           $('.logo img').attr('src', 'img/logo.png');
          }
          $('.logo').css({'margin': '15px 15px 15px 0'});
        }
@@ -120,15 +121,17 @@
     var contact_show = 0;
     $('.contact h3').click(function(){
       if(contact_show == 0){
-        $('.contact').animate({right: '30px'}, 'slow');
+        $('.contact').animate({right: '0px'}, 'slow');
         contact_show = 1;
 
       }else{
-        $('.contact').animate({right: '-255px'}, 'slow');
+        $('.contact').animate({right: '-243px'}, 'slow');
         contact_show = 0;
       }
     });
+
   });
+
   //Angular
     var app = angular.module("myApp", ["ngRoute"]);
     app.controller('myCtrl', function($scope) {
@@ -138,10 +141,10 @@
     app.config(function($routeProvider) {
       $routeProvider
       .when("/", {
-          templateUrl : "pages/main.htm?v=1.4.1"
+          templateUrl : "pages/main.htm?v=1.5.5"
       })
       .when("/oferta", {
-          templateUrl : "pages/offer.htm?v=1.1.8"
+          templateUrl : "pages/offer.htm?v=1.2.1"
       });
     });
   </script>

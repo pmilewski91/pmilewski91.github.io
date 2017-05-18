@@ -40,22 +40,59 @@
 body{
   font-family:'Neo Sans W01','Open Sans', sans-serif !important;
 }
+.nav-fixed-hidden{
+  display: none;
+}
 header{
   background: url(../img/photo_02.jpg) no-repeat center center;
   background-size: cover;
-  .navbar-fixed-top{
-    padding: 5px 0 !important;
-    background: #01212f !important;
+  position: relative;
+  .gradient-img{
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.66) 14%, rgba(0,0,0,0.53) 27%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 14%,rgba(0,0,0,0.53) 27%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 14%,rgba(0,0,0,0.53) 27%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9
+     */
   }
-  nav, .offer-content nav {
-    color: #FFFFFF;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.66) 34%, rgba(0,0,0,0.53) 47%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0.66) 34%,rgba(0,0,0,0.53) 47%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-    p a{
+  .navbar-fixed-top_style{
+    padding: 5px 0 !important;
+    background: #ffffff !important;
+    -webkit-transition: 0.4s all; /* Safari */
+    transition: 0.4s all;
+    box-shadow: #ccc 0px 1px 10px;
+    color: #01212f! important;
+    .container{
+      padding: 0 !important;
+    }
+    .navbar-link{
+      a{
+        color: #01212f !important;
+        &:hover{
+          color: @color1 !important;
+          -webkit-transition: color 0.6s; /* Safari */
+          transition: color 0.6s;
+        }
+      }
+    }
+  }
+  nav {
+    color: #ffffff;
+    padding: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+     -webkit-transition: 0.4s all; /* Safari */
+     transition: 0.4s all;
+     .navbar-link a{
+       padding: 0px 15px 0 15px;
+     }
+     .container{
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+     }
+    p {
+      margin: 0 0 15px !important;
+      a{
       color:@color1;
       font-weight: bold;
       margin-right: 26px;
@@ -66,15 +103,17 @@ header{
         text-decoration: none;
       }
     }
+    }
+
     .logo{
-      margin-left: 0;
+      margin: 0 !important;
     }
     div > div > a:nth-last-child(2){
       margin-right: 10px;
     }
     .navbar-link{
       a{
-        color: #FFFFFF;
+        color: #ffffff;
         font-size: 18px;
         &:hover, &:focus{
           background-color:transparent !important;
@@ -91,8 +130,7 @@ header{
     .navbar-header{
       button{
         background-color: rgb(0, 145, 228);
-        float: none;
-        width:100%;
+        max-width: 48px;
         cursor: pointer;
       }
       .icon-bar{
@@ -123,70 +161,95 @@ header{
           background-color:@color1;
           border:none;
           color:#fff;
-          padding: 10px;
+          padding: 15px 30px;
           margin-top:20px;
           font-size: 15px;
-          width: 100%;
+
               &:hover{
                   background-color:@color1/2;
-                  -webkit-transition: color 0.6s; /* Safari */
+                  -webkit-transition: background-color 0.6s; /* Safari */
                   transition: background-color 0.6s;
                   }
       }
   }
   section{
-        margin-top:5%;
-        background-color:#fff;
+        background-color:#ffffff;
+        position: absolute;
+        bottom: 50px;
         article{
+            margin-left: -3px;
             max-width:270px;
             padding:20px;
             font-size: 16px;
             border-right: 1px solid #D9D9D9;
+            background-color: #ffffff;
+            cursor: pointer;
+            &:hover{
+              background-color: @color1;
+              color:#ffffff;
+              -webkit-transition:  0.6s all; /* Safari */
+              transition: 0.6s all;
+            }
             p{
               margin:0;
             }
         }
         .active{
             background-color: @color1;
-            color: #fff;
+            color: #ffffff;
         }
     }
 }
+
 .contact{
    position:fixed;
+   width: 243px;
+   min-height: 245px;
    top:50%;
-   right: -255px;
+   right: -243px;
    background-color:#fff;
    z-index: 1000;
-   /* Safari */
-   -webkit-transform: rotate(-90deg) translateX(50%);
-   /* Firefox */
-   -moz-transform: rotate(-90deg) translateX(50%);
-   /* IE */
-   -ms-transform: rotate(-90deg) translateX(50%);
-   /* Opera */
-   -o-transform: rotate(-90deg) translateX(50%);
+   transform: translateY(-50%);
    h3{
        background-color: rgba(251,50,16,1);
        color:#fff;
-       padding:10px 40px;
+       padding:10px;
        margin: 0;
        cursor: pointer;
        font-size: 20px;
        font-weight: bold;
+       text-align: center;
+       /* Safari */
+       -webkit-transform: rotate(-90deg);
+       /* Firefox */
+        -moz-transform: rotate(-90deg);
+       /* IE */
+        -ms-transform: rotate(-90deg);
+       /* Opera */
+        -o-transform: rotate(-90deg);
+        position: absolute;
+        top: 102px;
+        right: 141px;
+        width: 245px;
+
    }
    .contact_form{
         padding:20px;
         /* Safari */
-        -webkit-transform: rotate(90deg);
+        // -webkit-transform: rotate(90deg);
         /* Firefox */
-        -moz-transform: rotate(90deg);
+        // -moz-transform: rotate(90deg);
         /* IE */
-        -ms-transform: rotate(90deg);
+        // -ms-transform: rotate(90deg);
         /* Opera */
-        -o-transform: rotate(90deg);
+        // -o-transform: rotate(90deg);
         input, textarea{
             margin-bottom:10px;
+            max-width: 227px;
+        }
+        textarea{
+          min-height: 73px;
+          max-height: 73px;
         }
     }
 }
@@ -241,10 +304,9 @@ header{
           background-color:@color1;
           border:none;
           color:#fff;
-          padding: 10px;
+          padding: 15px 30px;
           margin-top:20px;
           font-size: 15px;
-          width: 100%;
               &:hover{
                   background-color:@color1/2;
                   -webkit-transition: color 0.6s; /* Safari */
@@ -284,7 +346,6 @@ header{
             &:hover{
                 color:#fff;
                 background-color: @color1;
-                border: 1px solid #ffffff;
                 -webkit-transition: background-color 0.6s;
                 transition: background-color 0.6s;
             }
@@ -312,16 +373,20 @@ header{
     color: @color1;
   }
   .caption{
-    min-height: 315px;
+    min-height: 345px;
     line-height: 24px;
-    padding: 24px !important;
+    padding: 35px !important;
+    h3{
+      margin-top: 0px;
+    }
     p{
       font-family: 'Open Sans', sans-serif;
       font-size: 15px;
     }
   }
   .thumbnail-btn{
-    padding: 0 40px;
+    padding: 0 35px;
+    margin-bottom: 25px;
     a{
       width: 100%;
       background-color: @color1;
@@ -359,9 +424,12 @@ body > section.container.box.text-center > p{
   font-weight: bold !important;
   display: block !important;
   padding: 10px 0px !important;
-  max-width: 270px;
+  max-width: 280px;
   margin: auto;
+  margin-bottom: 25px;
   text-align: center !important;
+  margin-top: 30px;
+  margin-bottom: 65px !important;
   &:hover{
     background-color: #7b7b7b;
     color:#fff !important;
@@ -372,9 +440,14 @@ body > section.container.box.text-center > p{
 .section-contact{
   background-color: @color1;
   color:#fff;
+  padding: 16px 0;
   .container{
     div{
         margin: 20px 0;
+        padding: 0 65px;
+        h3{
+          margin-top: 1px !important;
+        }
         p{
           font-size: 16px;
         }
@@ -399,6 +472,7 @@ body > section.container.box.text-center > p{
       padding-top: 5px !important;
 }
 footer{
+  padding: 35px 0;
   .footer-logo{
     display: block;
     border-right: 1px solid #F2F2F2;
@@ -419,6 +493,7 @@ footer{
     font-weight: bold;
     color: #00aaf2;
     margin-top: 0;
+    margin-bottom: 26px;
   }
   ul{
     padding: 0;
@@ -473,6 +548,9 @@ footer{
   }
 }
 @media all and (max-width: 1200px) and (min-width: 767px){
+  nav .navbar-link a{
+    padding: 0px 5px 0 5px !important;
+  }
   body > div.ng-scope > header > div > section{
     display: flex;
   }
@@ -492,6 +570,12 @@ footer{
   }
 }
 @media all and (min-width: 767px){
+  nav{
+    max-height: 128px;
+    .container{
+      padding: 36px 0;
+    }
+  }
   .search-home-input-group{
     display: flex;
     align-items: center;
@@ -529,30 +613,56 @@ footer{
   }
   header {
     border-bottom: 1px solid #ccc;
-      section article{
+    .header_article{
+      margin-top: 128px;
+    }
+      section {
+        position: relative!important;
+        margin-top: 70px;
+        article{
         width: 100%;
         max-width: none;
+        border-right: none;
+        margin-left: 0px;
+        }
     }
     nav{
       background: #01212f !important;
       text-align: center;
       padding: 10px !important;
+      .logo{
+        img{
+          padding-left: 10px;
+        }
+      }
+      .navbar-link a{
+        padding: 15px;
+      }
+      .container{
+        display: block;
+      }
       .social-media{
         width: 100%;
         text-align: center;
         margin: 10px 0;
         margin-right: 0 !important;
       }
-      .navbar-collapse div{
-        float:none !important;
+      .navbar-collapse {
+        margin-top: 10px;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        div{
+          float:none !important;
+        }
       }
+
       .navbar-header{
         display: table-cell;
         width: 100%;
         padding-left: 15px;
         vertical-align: middle;
         button{
-          width: 50% !important;
+          width: 48px;
         }
       }
     }
