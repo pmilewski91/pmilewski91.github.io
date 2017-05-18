@@ -112,7 +112,12 @@
        }else if($(this).scrollTop() < 20){
          if($('nav').hasClass('navbar-fixed-top')){
            $('nav').removeClass('navbar-fixed-top_style');
-           $('.logo img').attr('src', 'img/logo.png');
+           if(header_width < 768){
+             $('.logo img').attr('src', 'img/logo-black.png');
+           }else{
+             $('.logo img').attr('src', 'img/logo.png');
+           }
+
          }
          $('.logo').css({'margin': '15px 15px 15px 0'});
        }
@@ -145,7 +150,7 @@
           templateUrl : "pages/main.htm?v=1.6.1"
       })
       .when("/oferta", {
-          templateUrl : "pages/offer.htm?v=1.2.3"
+          templateUrl : "pages/offer.htm?v=1.2.4"
       });
     });
   </script>
