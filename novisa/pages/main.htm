@@ -167,7 +167,7 @@
 <section class="container box">
   <div class="row">
     <article class="col-sm-4 col-md-4">
-      <img class="thumbnail-img img-responsive" src="img/wola.jpg" alt="Novisa Garden - Nowa Wola">
+      <img class="thumbnail-img img-responsive" src="img/wola.jpg" alt="Novisa Garden - Nowa Wola" width="100%"/>
       <div class="thumbnail">
         <div class="caption">
           <h3>Novisa Garden - Nowa Wola</h3>
@@ -177,7 +177,7 @@
       </div>
     </article>
     <article class="col-sm-4 col-md-4">
-      <img class="thumbnail-img img-responsive" src="img/piaseczno.jpg" alt="Owocowy Sad - Piaseczno">
+      <img class="thumbnail-img img-responsive" src="img/piaseczno.jpg" alt="Owocowy Sad - Piaseczno" width="100%"/>
       <div class="thumbnail">
         <div class="caption">
           <h3>Owocowy Sad - Piaseczno</h3>
@@ -187,7 +187,7 @@
       </div>
     </article>
     <article class="col-sm-4 col-md-4">
-      <img class="thumbnail-img img-responsive" src="img/bialoleka.jpg" alt="Ogrody Przyjaciół - Białołęka">
+      <img class="thumbnail-img img-responsive" src="img/bialoleka.jpg" alt="Ogrody Przyjaciół - Białołęka" width="100%"/>
       <div class="thumbnail">
         <div class="caption">
           <h3>Ogrody Przyjaciół - Białołęka</h3>
@@ -201,15 +201,34 @@
 </section>
 <script>
   $(document).ready(function(){
-    var header_height = window.innerHeight;
-    var header_width = window.innerWidth;
-
-    if(header_width > 767){
+    function window_size(){
+      var header_height = window.innerHeight;
+      var header_width = window.innerWidth;
       //header height
-      $('header').css({'height':header_height});
-      //.header_article vertically center in the header
-      $('.header_article').css({'margin-top':((header_height/2 - $('.header_article').height()))+$('nav').height()});
+      if(header_width > 767){
+        //header height
+        $('header').css({'min-height':header_height});
+        //.header_article vertically center in the header
+        $('.header_article').css({'margin-top':((header_height/2 - $('.header_article').height()))+$('nav').height()});
+
+        //thumbnail caption height
+        var caption_3 = $('body > div.ng-scope > section:nth-child(5) > div > article:nth-child(3) > div > div');
+        caption_3.css({'min-height': 'inherit'});
+        var thumnail_height = caption_3.height();
+        $('.thumbnail .caption').css({'min-height':thumnail_height+70});
+      }
+      if(header_width < 768){
+        $('.logo img').attr('src', 'img/logo-black.png');
+        $('header').css({'min-height':'inherit'});
+        $('.thumbnail .caption').css({'min-height':'inherit'});
+      }else{
+        $('.logo img').attr('src', 'img/logo.png');
+      }
     }
+    window_size();
+    $(window).resize(function(){
+      window_size();
+    });
 
     $('.selectpicker').selectpicker({
       style: 'btn-default'

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Paweł Milewski">
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="css/styles.css?v=4.0.3">
+    <link rel="stylesheet" href="css/styles.css?v=4.1.1">
     <link rel="stylesheet" href="css/offer.css?v=1.7.1">
     <script src="frameworks/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
@@ -99,29 +99,37 @@
   <script src="data.js?v=1.1.2"></script>
   <script>
   $(document).ready(function(){
-    var header_height = window.innerHeight;
-    var header_width = window.innerWidth;
-      // fixed navbar
-      $(window).bind('scroll', function(){
-        if($(this).scrollTop() > 20) {
-          $('nav').addClass('navbar-fixed-top_style');
-          $('.logo img').attr('src', 'img/logo-black.png');
-          if(header_width <= 1200){
-            $('.logo').css({'margin': '5px 0'});
-          }
-       }else if($(this).scrollTop() < 20){
-         if($('nav').hasClass('navbar-fixed-top')){
-           $('nav').removeClass('navbar-fixed-top_style');
-           if(header_width < 768){
-             $('.logo img').attr('src', 'img/logo-black.png');
-           }else{
-             $('.logo img').attr('src', 'img/logo.png');
-           }
 
+    function window_size(){
+      var header_height = window.innerHeight;
+      var header_width = window.innerWidth;
+        // fixed navbar
+        $(window).bind('scroll', function(){
+          if($(this).scrollTop() > 20) {
+            $('nav').addClass('navbar-fixed-top_style');
+            $('.logo img').attr('src', 'img/logo-black.png');
+            if(header_width <= 1200){
+              $('.logo').css({'margin': '5px 0'});
+            }
+         }else if($(this).scrollTop() < 20){
+           if($('nav').hasClass('navbar-fixed-top')){
+             $('nav').removeClass('navbar-fixed-top_style');
+             if(header_width < 768){
+               $('.logo img').attr('src', 'img/logo-black.png');
+             }else{
+               $('.logo img').attr('src', 'img/logo.png');
+             }
+
+           }
+           $('.logo').css({'margin': '15px 15px 15px 0'});
          }
-         $('.logo').css({'margin': '15px 15px 15px 0'});
-       }
+      });
+    };
+    window_size();
+    $(window).resize(function(){
+      window_size();
     });
+
     // show contact
     var contact_show = 0;
     $('.contact h3').click(function(){
@@ -147,10 +155,10 @@
     app.config(function($routeProvider) {
       $routeProvider
       .when("/", {
-          templateUrl : "pages/main.htm?v=1.6.1"
+          templateUrl : "pages/main.htm?v=1.7.6"
       })
       .when("/oferta", {
-          templateUrl : "pages/offer.htm?v=1.2.4"
+          templateUrl : "pages/offer.htm?v=1.2.5"
       });
     });
   </script>

@@ -61,7 +61,7 @@ header{
      */
   }
   .navbar-fixed-top_style{
-    padding: 5px 0 !important;
+    padding: 20px 0 !important;
     background: #ffffff !important;
     -webkit-transition: 0.4s all; /* Safari */
     transition: 0.4s all;
@@ -180,8 +180,7 @@ header{
   }
   section{
         background-color:#ffffff;
-        position: absolute;
-        bottom: 50px;
+        margin: 50px 0;
         article{
             margin-left: -3px;
             max-width:270px;
@@ -193,8 +192,6 @@ header{
             &:hover{
               background-color: @color1;
               color:#ffffff;
-              -webkit-transition:  0.6s all; /* Safari */
-              transition: 0.6s all;
             }
             p{
               margin:0;
@@ -352,8 +349,6 @@ header{
             &:hover{
                 color:#fff;
                 background-color: @color1;
-                -webkit-transition: background-color 0.6s;
-                transition: background-color 0.6s;
             }
         }
         .scheme{
@@ -379,7 +374,6 @@ header{
     color: @color1;
   }
   .caption{
-    min-height: 345px;
     line-height: 24px;
     padding: 35px !important;
     h3{
@@ -557,8 +551,8 @@ footer{
   nav .navbar-link a{
     padding: 0px 5px 0 5px !important;
   }
-  body > div.ng-scope > header > div > section{
-    display: flex;
+  header > div > div > section{
+    display: flex !important;
   }
   .logo{
     padding: 0;
@@ -570,9 +564,6 @@ footer{
   }
   header nav p a{
     margin-right: 10px;
-  }
-  .thumbnail .caption{
-    min-height: 510px;
   }
 }
 @media all and (min-width: 767px){
@@ -697,9 +688,6 @@ footer{
   .logo {
     display: table-cell;
     vertical-align: middle;
-  }
-  .thumbnail .caption{
-    min-height: 0;
   }
   .grey-btn{
     width: 100% !important;
