@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sollers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Paweł Milewski">
+    <!-- <link rel="shortcut icon" href="img/favicon.ico" /> -->
+    <link rel="stylesheet" href="css/styles.css?v=2.1.8">
+    <script src="frameworks/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="css/Fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+  <body ng-app="sollersApp" ng-controller="sollersCtrl" ng-cloak>
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title logo"><a href="#"><img src="img/logo.png" alt="Sollers"/></a></span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation_link active-nav-link" href="#">Sprzedaż</a>
+        <a class="mdl-navigation_link" href="#">Polisy</a>
+        <a class="mdl-navigation_link " href="#">Klienci</a>
+      </nav>
+    </div>
+    <div role="button" tabindex="0" class="mdl-layout__drawer-button">Menu</div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title logo"><a href="#"><img src="img/logo.png" alt="Sollers"/></a></span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link mdl-tabs__tab" href="#">Sprzedaż</a>
+      <a class="mdl-navigation__link mdl-tabs__tab" href="#">Polisy</a>
+      <a class="mdl-navigation__link mdl-tabs__tab" href="#">Klienci</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <div class="map">
+        <div class="container">
+          <a href="#">Baza klientów</a><i class="fa fa-angle-right breadcrumb" aria-hidden="true"></i><a href="#">Edycja danych klienta</a><i class="fa fa-angle-right breadcrumb" aria-hidden="true"></i><a class="active" href="#">Stanisław Kowalski</a>
+        </div>
+      </div>
+      <div class="container">
+          <div class="left-box">
+            <div class="btn-container">
+              <md-button class="md-raised sell user-btn"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Sprzedaj</md-button>
+              <md-button class="md-raised phone user-btn"><i class="fa fa-phone" aria-hidden="true"></i> Dzwoń</md-button>
+              <md-button class="md-raised mail user-btn"><i class="fa fa-envelope-o" aria-hidden="true"></i> E-mail</md-button>
+            </div>
+            <form name="projectForm">
+              <md-input-container flex="100" class="nameInput">
+                <input required name="clientName" aria-label="clientName.description" ng-model="clientName.description">
+                <div ng-messages="projectForm.clientName.$error">
+                  <div ng-message="required">Podaj imię i nazwisko</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Drugie imię</label>
+                <input class="small" required name="clientSecondName" ng-model="clientSecondName.description">
+                <div ng-messages="projectForm.clientSecondName.$error">
+                  <div ng-message="required">Podaj drugie imię</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Pesel</label>
+                <input class="small" required name="clientPesel" ng-model="clientPesel.description">
+                <div ng-messages="projectForm.clientPesel.$error">
+                  <div ng-message="required">Podaj Pesel</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Rodzaj dokumentu</label>
+                <input class="small" required name="clientDocument" ng-model="clientDocument.description">
+                <div ng-messages="projectForm.clientDocument.$error">
+                  <div ng-message="required">Podaj rodzaj dokumentu</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Numer dowodu / seria</label>
+                <input class="small" required name="clientSeries" ng-model="clientSeries.description">
+                <div ng-messages="projectForm.clientSeries.$error">
+                  <div ng-message="required">Podaj numer dowodu / serii</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Data urodzenia</label>
+                <md-datepicker required name="clientDate" class="small" ng-model="ctrl.myDate" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Miejsce urodzenia</label>
+                <input class="small" required name="clientBirthplace" ng-model="clientBirthplace.description">
+                <div ng-messages="projectForm.clientBirthplace.$error">
+                  <div ng-message="required">Podaj miejsce urodzenia</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Narodowość</label>
+                <input class="small" required name="clientNationality" ng-model="clientNationality.description">
+                <div ng-messages="projectForm.clientNationality.$error">
+                  <div ng-message="required">Podaj narodowość</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Płeć</label>
+                <input class="small" required name="clientSex" ng-model="clientSex.description">
+                <div ng-messages="projectForm.clientSex.$error">
+                  <div ng-message="required">Podaj płeć</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Stan cywilny</label>
+                <input class="small" required name="clientStatus" ng-model="clientStatus.description">
+                <div ng-messages="projectForm.clientStatus.$error">
+                  <div ng-message="required">Podaj stan cywilny</div>
+                </div>
+              </md-input-container>
+              <div class="flex-100 hr"></div>
+              <md-input-container flex="50">
+                <label>Income group</label>
+                <input class="small" required name="clientIncome" ng-model="clientIncome.description">
+                <div ng-messages="projectForm.clientIncome.$error">
+                  <div ng-message="required">Podaj grupę</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Client segment</label>
+                <input class="small" required name="clientSegment" ng-model="clientSegment.description">
+                <div ng-messages="projectForm.clientSegment.$error">
+                  <div ng-message="required">Podaj segment</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Id klienta</label>
+                <input class="small" required name="clientId" ng-model="clientId.description">
+                <div ng-messages="projectForm.clientId.$error">
+                  <div ng-message="required">Podaj Id</div>
+                </div>
+              </md-input-container>
+            </form>
+            </div>
+            <div class="left-right">
+            </div>
+        </div>
+      </div>
+  </main>
+</div>
+<!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <script>
+    $('document').ready(function(){
+      $('.mdl-navigation_link').click(function(){
+        $('.mdl-navigation a').removeClass('active-nav-link');
+        $(this).addClass('active-nav-link');
+      });
+    });
+  </script>
+  <script type="text/javascript">
+  /**
+   * You must include the dependency on 'ngMaterial'
+   */
+  angular.module('sollersApp', ['ngMaterial', 'ngMessages'])
+  .controller('sollersCtrl', function($scope) {
+  $scope.clientName = {
+      description: 'Stanisław Kowalski',
+      rate: 500,
+      special: true
+  };
+  $scope.clientSecondName = {
+      description: 'Grzegorz',
+      rate: 500,
+      special: true
+  };
+  $scope.clientPesel = {
+      description: '941212024141',
+      rate: 500,
+      special: true
+  };
+  $scope.clientDocument = {
+      description: 'Dowód osobisty',
+      rate: 500,
+      special: true
+  };
+  $scope.clientSeries = {
+      description: 'AE54539100',
+      rate: 500,
+      special: true
+  };
+  $scope.clientBirthplace = {
+      description: 'Warszawa',
+      rate: 500,
+      special: true
+  };
+  $scope.clientNationality = {
+      description: 'Polska',
+      rate: 500,
+      special: true
+  };
+  $scope.clientSex = {
+      description: 'Mężczyzna',
+      rate: 500,
+      special: true
+  };
+  $scope.clientStatus = {
+      description: 'Kawaler',
+      rate: 500,
+      special: true
+  };
+  $scope.clientIncome = {
+      description: 'Pierwsza grupa dochodowa',
+      rate: 500,
+      special: true
+  };
+  $scope.clientSegment = {
+      description: 'Customer segment 1',
+      rate: 500,
+      special: true
+  };
+  $scope.clientId = {
+      description: 'Customer segment 1',
+      rate: 500,
+      special: true
+  };
+});
+this.myDate = new Date();
+this.isOpen = false;
+</script>
+  </body>
+</html>
